@@ -34,16 +34,31 @@ _add("DATA_TYPE",
      "int int8 int16 int32 int64 int128 int256 "
      "bool boolean address string str bytes asset enum struct "
      "mapping ledger roster")
+
 _add("KEYWORD",
      "contract constructor construct def define if else for while return "
      "import new event error emit require void copy")
-_add("ACCESS_SPECIFIER", "external internal private public")
-_add("MUTABILITY", "pure view payable")
-_add("DATA_LOCATION", "storage memory calldata")
-_add("TRADINGFUNC", "offer accept order swap batch refund timeout cancel")
-_add("CONTEXT_KEYWORD", "partial buy gascontext bytecodecontext")
-_add("GLOBAL", "msg block sender value")
-_add("BOOL_LITERAL", "true false")
+
+_add("ACCESS_SPECIFIER",
+     "external internal private public")
+
+_add("MUTABILITY", 
+     "pure view payable")
+
+_add("DATA_LOCATION", 
+     "storage memory calldata")
+
+_add("TRADINGFUNC", 
+     "offer accept order swap batch refund timeout cancel")
+
+_add("CONTEXT_KEYWORD", 
+     "partial buy gascontext bytecodecontext")
+
+_add("GLOBAL", 
+     "msg block sender value")
+
+_add("BOOL_LITERAL",
+      "true false")
 
 # Longest match first: 3-char, then 2-char, then 1-char operators.
 OPS3 = {"<<=": "ASSIGN_OP", ">>=": "ASSIGN_OP"}
