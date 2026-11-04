@@ -1,0 +1,14 @@
+// Invalid tokens demonstration
+contract Bad {
+    uint _hidden = 5;
+    uint price = 1.5;
+    uint count = 12abc;
+    uint big = 0xZZ;
+    string s = "never closed;
+    uint a = 5 @ 3;
+    uint b = 4 # 2;
+    uint c = $money;
+    char q = 'x';
+    uint ok = 10;
+}
+/* this comment never ends

@@ -1,0 +1,80 @@
+//Create Trade
+    def uint256 createEscrowTrade(address seller, address buyer, uint256 ethAmt, uint256 usdcPrice) public payable {
+        if (msg.sender != seller) {
+            revert Unauthorized();
+        }
+
+        uint256 offerId = offer(buyer, seller, ETH, ethAmt, USDC, usdcPrice, timeout(2d));
+
+        refund {
+            seller.transfer(100 wei);
+        }
+
+        return offerId;
+    }
+
+	//Swap confirmation
+    def uint256 proposeInstantSwap(address seller, address buyer) public {
+        uint256 swapId = swap(buyer, seller, ETH, 5, USDC, 15000, timeout(12h));
+        return swapId;
+    }
+
+	//Finalize Swap
+    def void finalizeSwap(uint256 swapId) public {
+        accept(swapId);
+    }
+
+	//Order Function
+    def uint256 postBuyOrder(uint256 amountETH, uint256 priceUSDC) public {
+        uint256 orderId = order buy ETH {
+            amount: amountETH;
+            price: priceUSDC;
+            expired: timeout(7d);
+        };
+
+        return orderId;
+    }
+
+	//Partial Order
+    def void fillOrderPartially(uint256 orderId, uint256 fillAmount) public {
+        accept(orderId, partial, ETH, fillAmount);
+    }
+
+	//Full Order
+    def void fillOrderCompletely(uint256 orderId) public {
+        accept(orderId);
+    }
+
+	//Cancel trade
+    def void cancelActiveTrade(uint256 tradeId) public {
+        cancel(tradeId);
+    }
+
+
+	//Batch Function
+    def void executeAtomicArbitrage(uint256 offerA, uint256 offerB, uint256 swapC) public {
+        batch settlement {
+            timeout(45s);
+            accept(offerA);
+            accept(offerB);
+            accept(swapC);
+        }
+    }
+
+	//Claim Refund
+    def void claimFailedTradeRefund() public {
+        accept(refund);
+    }
+
+	//Check Existing
+    def bool checkVaultExistence(address trader) public view {
+        if (userVaults.has(trader)) {
+            return true;
+        }
+        return false;
+    }
+
+	//Get Page
+    def void getTraderPage(uint256 cursor) public view {
+        registeredTraders.page(cursor, 50);
+    }

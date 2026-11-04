@@ -1,0 +1,18 @@
+// Solb error handling: standardized and custom errors
+error InsufficientBalance(address account, uint256 available, uint256 required);
+error InsufficientGas(gascontext);       // custom error with gas context
+error TooLarge(bytecodecontext);         // custom error with bytecode context
+
+contract Escrow {
+    event Seen(uint status);
+
+    def void withdraw(uint amount) public {
+        require(amount > 0, "Invalid amount");
+        if (balance < amount) {
+            emit Seen(1);
+        }
+        copy snap = offers[id];
+        storage o = offers[id];
+        o.status = 2;
+    }
+}
