@@ -90,7 +90,7 @@ REJECT | [12abc] | State: q19 | No accepting token (malformed number)
 | `BITWISE_OP` | `&`, `\|`, `^`, `~`, `<<`, `>>` |
 | `RELATIONAL_OP` | `==`, `!=`, `<`, `>`, `<=`, `>=` |
 | `ARROW` | `=>` |
-| Delimiters | `SEMICOLON`, `COMMA`, `DOT`, `COLON`, `LPAREN`, `RPAREN`, `LBRACE`, `RBRACE`, `LBRACKET`, `RBRACKET` |
+| Delimiters | `;`, `,`, `.`, `:`, `(`, `)`, `{`, `}`, `[`, `]` |
 
 Noise words are accepted in both forms and get the same token category:
 `def`/`define`, `bool`/`boolean`, `construct`/`constructor`, `str`/`string`.
