@@ -18,7 +18,7 @@ import sys
 from dataclasses import dataclass
 
 # --------------------------------------------------------------------------
-# Language definition
+# Language definition (from the Solb PL design document)
 # --------------------------------------------------------------------------
 
 KEYWORDS = {}
@@ -34,34 +34,19 @@ _add("DATA_TYPE",
      "int int8 int16 int32 int64 int128 int256 "
      "bool boolean address string str bytes asset enum struct "
      "mapping ledger roster")
-
+# "copy" is not in the spec's keyword table but is used in its examples.
 _add("KEYWORD",
      "contract constructor construct def define if else for while return "
      "import new event error emit require void copy")
+_add("ACCESS_SPECIFIER", "external internal private public")
+_add("MUTABILITY", "pure view payable")
+_add("DATA_LOCATION", "storage memory calldata")
+_add("BUILTIN", "offer accept order swap batch refund timeout cancel")
+_add("CONTEXT_KEYWORD", "partial buy gascontext bytecodecontext")
+_add("GLOBAL", "msg block sender value")
+_add("BOOL_LITERAL", "true false")
 
-_add("ACCESS_SPECIFIER",
-     "external internal private public")
-
-_add("MUTABILITY", 
-     "pure view payable")
-
-_add("DATA_LOCATION", 
-     "storage memory calldata")
-
-_add("TRADINGFUNC", 
-     "offer accept order swap batch refund timeout cancel")
-
-_add("CONTEXT_KEYWORD", 
-     "partial buy gascontext bytecodecontext")
-
-_add("GLOBAL", 
-     "msg block sender value")
-
-_add("BOOL_LITERAL",
-      "true false")
-
-# Longest match first:2-char, then 1-char operators.
-
+# Longest match first: 2-char operators, then 1-char operators.
 OPS2 = {
     "+=": "ASSIGN_OP", "-=": "ASSIGN_OP", "*=": "ASSIGN_OP", "/=": "ASSIGN_OP",
     "%=": "ASSIGN_OP", "~=": "ASSIGN_OP", "&=": "ASSIGN_OP", "|=": "ASSIGN_OP",
@@ -292,18 +277,19 @@ def tokenize(src):
                 i = j
             continue
 
-        # ---- string literal ---------------------------------------------
-        if c == '"':
+        # ---- string literal (double or single quoted) ---------------------
+        if c == '"' or c == "'":
+            q = c                      # the quote that opened this string
             j = i + 1
             bad_escape = None
             closed = False
             while j < n and src[j] != "\n":
-                if src[j] == '"':
+                if src[j] == q:
                     closed = True
                     break
                 if src[j] == "\\":
                     nxt = src[j + 1] if j + 1 < n else ""
-                    if nxt not in ('"', "\\", "n"):
+                    if nxt not in (q, "\\", "n"):
                         bad_escape = j
                     j += 2
                 else:
@@ -313,8 +299,8 @@ def tokenize(src):
                 error(i, j, "unterminated string literal", "string")
                 i = j
             elif bad_escape is not None:
-                error(i, j + 1, "invalid escape sequence in string "
-                                "(allowed: \\\" \\\\ \\n)", "string")
+                error(i, j + 1, f"invalid escape sequence in string "
+                                f"(allowed: \\{q} \\\\ \\n)", "string")
                 i = j + 1
             else:
                 emit("STRING_LITERAL", i, j + 1, "string")
@@ -322,7 +308,7 @@ def tokenize(src):
             continue
 
         # ---- operators and delimiters (longest match) ---------------------
-        three, two = src[i:i + 3], src[i:i + 2]
+        two = src[i:i + 2]
         if two in OPS2:
             emit(OPS2[two], i, i + 2, "op")
             i += 2
@@ -373,14 +359,15 @@ def _num_step(state, ch, prefix):
     return ERR
 
 
-def _str_step(state, ch):
-    if state == START and ch == '"':
+def _str_step(state, ch, prefix):
+    q = prefix[:1] or ch               # opening quote: " or '
+    if state == START and ch in ('"', "'"):
         return STR
     if state == STR:
         if ch == "\\":
             return STR_ESC
-        return STR_END if ch == '"' else STR
-    if state == STR_ESC and ch in ('"', "\\", "n"):
+        return STR_END if ch == q else STR
+    if state == STR_ESC and ch in (q, "\\", "n"):
         return STR
     return ERR
 
@@ -412,7 +399,7 @@ def _step(kind, state, ch, prefix):
     if kind == "number":
         return _num_step(state, ch, prefix)
     if kind == "string":
-        return _str_step(state, ch)
+        return _str_step(state, ch, prefix)
     if kind == "comment":
         return _comment_step(state, ch)
     if kind == "underscore":
@@ -433,7 +420,7 @@ def _char_class(ch):
         return "SPACE"
     if ch in "\r\n":
         return "NEWLINE"
-    if ch == '"':
+    if ch in ('"', "'"):
         return "QUOTE"
     if ch == "\\":
         return "BACKSLASH"
@@ -481,7 +468,7 @@ def build_trace(src, segs, lc):
 
 
 # --------------------------------------------------------------------------
-# Symbol Table
+# Reporting
 # --------------------------------------------------------------------------
 
 def build_symbol_table(tokens):
@@ -493,7 +480,7 @@ def build_symbol_table(tokens):
 
 
 def render_symbol_table(tokens):
-    # Every occurrence is listed, in source order.
+    # Every occurrence is listed, in source order (repeats are NOT merged).
     rows = [(t.lexeme, t.type) for t in tokens]
     width = max([len("Lexeme")] + [len(lex) for lex, _ in rows])
     out = [f"{'Lexeme':<{width}} | Token",
@@ -505,8 +492,8 @@ def render_symbol_table(tokens):
 def main():
     ap = argparse.ArgumentParser(description="Solb lexical analyzer")
     ap.add_argument("source", help="Solb source file (.solb)")
-    ap.add_argument("-o", "--output", default="SYMBOL TABLE.txt",
-                    help="where to save the report (default: SYMBOL TABLE.txt)")
+    ap.add_argument("-o", "--output", default="symbol_table.txt",
+                    help="where to save the report (default: symbol_table.txt)")
     args = ap.parse_args()
 
     if not args.source.lower().endswith(".solb"):
@@ -522,14 +509,14 @@ def main():
     tokens, errors, segs, lc = tokenize(src)
     table, unique = render_symbol_table(tokens)
 
-    # Terminal: symbol table + errors.
+    # Output Terminal - symbol table + errors.
     print("\n".join(table))
     if errors:
         print("\nLEXICAL ERRORS")
         for e in errors:
             print(f"Line {e.line}, Column {e.col}: {e.message} -> [{e.lexeme}]")
 
-    # File: symbol table, then the DFA trace.
+    # File - symbol table, then the DFA trace.
     lines = table + [
         "",
         "CHARACTER-BY-CHARACTER SCAN AND DFA TRANSITIONS",
