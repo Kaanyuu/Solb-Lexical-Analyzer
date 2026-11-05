@@ -82,7 +82,7 @@ REJECT | [12abc] | State: q19 | No accepting token (malformed number)
 | `HEX_LITERAL` | `0x1F` |
 | `DURATION` | `30s`, `5m`, `1d` |
 | `ASSET_LITERAL` | `0.05 USDC`, `2261 USDC`, `100 wei` |
-| `STRING_LITERAL` | `"Invalid amount"` |
+| `STRING_LITERAL` | `"Invalid amount"` | `'Invalid Amount'`
 | `ASSIGN_OP` | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `~=`, `&=`, `\|=`, `^=`, `<<=`, `>>=` |
 | `ARITH_OP` | `+`, `-`, `*`, `/`, `%`, `**` |
 | `UNARY_OP` | `++`, `--` |
