@@ -82,7 +82,7 @@ REJECT | [12abc] | State: q19 | No accepting token (malformed number)
 | `HEX_LITERAL` | `0x1F` |
 | `DURATION` | `30s`, `5m`, `1d` |
 | `ASSET_LITERAL` | `0.05 USDC`, `2261 USDC`, `100 wei` |
-| `STRING_LITERAL` | `"Invalid amount"` | `'Invalid Amount'` |
+| `STRING_LITERAL` | `"Invalid amount"`, `'Invalid Amount'` |
 | `ASSIGN_OP` | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `~=`, `&=`, `\|=`, `^=`, `<<=`, `>>=` |
 | `ARITH_OP` | `+`, `-`, `*`, `/`, `%`, `**` |
 | `UNARY_OP` | `++`, `--` |
@@ -90,7 +90,7 @@ REJECT | [12abc] | State: q19 | No accepting token (malformed number)
 | `BITWISE_OP` | `&`, `\|`, `^`, `~`, `<<`, `>>` |
 | `RELATIONAL_OP` | `==`, `!=`, `<`, `>`, `<=`, `>=` |
 | `ARROW` | `=>` |
-| Delimiters | `SEMICOLON`, `COMMA`, `DOT`, `COLON`, `LPAREN`, `RPAREN`, `LBRACE`, `RBRACE`, `LBRACKET`, `RBRACKET` |
+| Delimiters | `;`, `,`, `.`, `:`, `(`, `)`, `{`, `}`, `[`, `]` |
 
 Noise words are accepted in both forms and get the same token category:
 `def`/`define`, `bool`/`boolean`, `construct`/`constructor`, `str`/`string`.
@@ -109,4 +109,4 @@ keeps scanning so several errors can be found in one run.
 | Unterminated string | `"never closed;` |
 | Invalid escape sequence in a string | `"a\q"` |
 | Unterminated multi-line comment | `/* never ends` |
-| Invalid character | `@`, `#`, `$`, `'`, `?` |
+| Invalid character | `@`, `#`, `$`, `?` |
