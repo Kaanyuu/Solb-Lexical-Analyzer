@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Solb lexical analyzer.
 
@@ -7,7 +6,7 @@ Usage:
     python lexer.py program.solb -o my_symbol_table.txt
 
 Prints the symbol table (Lexeme | Token) and any lexical errors to the terminal.
-Saves the symbol table plus the character-by-character DFA transitions to
+Saves the symbol table and the character-by-character DFA transitions to
 symbol_table.txt. Exits with status 1 if any lexical errors were found.
 """
 
@@ -18,7 +17,7 @@ import sys
 from dataclasses import dataclass
 
 # --------------------------------------------------------------------------
-# Language definition (from the Solb PL design document)
+# Language definition
 # --------------------------------------------------------------------------
 
 KEYWORDS = {}
