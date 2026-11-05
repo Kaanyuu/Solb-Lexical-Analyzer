@@ -109,4 +109,4 @@ keeps scanning so several errors can be found in one run.
 | Unterminated string | `"never closed;` |
 | Invalid escape sequence in a string | `"a\q"` |
 | Unterminated multi-line comment | `/* never ends` |
-| Invalid character | `@`, `#`, `$`, `'`, `?` |
+| Invalid character | `@`, `#`, `$`, `?` |
