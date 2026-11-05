@@ -468,7 +468,7 @@ def build_trace(src, segs, lc):
 
 
 # --------------------------------------------------------------------------
-# Reporting
+# Symbol table insertions and rendering
 # --------------------------------------------------------------------------
 
 def build_symbol_table(tokens):
@@ -480,7 +480,7 @@ def build_symbol_table(tokens):
 
 
 def render_symbol_table(tokens):
-    # Every occurrence is listed, in source order (repeats are NOT merged).
+    # Every occurrence is listed, in source order.
     rows = [(t.lexeme, t.type) for t in tokens]
     width = max([len("Lexeme")] + [len(lex) for lex, _ in rows])
     out = [f"{'Lexeme':<{width}} | Token",
@@ -492,8 +492,8 @@ def render_symbol_table(tokens):
 def main():
     ap = argparse.ArgumentParser(description="Solb lexical analyzer")
     ap.add_argument("source", help="Solb source file (.solb)")
-    ap.add_argument("-o", "--output", default="symbol_table.txt",
-                    help="where to save the report (default: symbol_table.txt)")
+    ap.add_argument("-o", "--output", default="SYMBOL TABLE.txt",
+                    help="where to save the report (default: SYMBOL TABLE.txt)")
     args = ap.parse_args()
 
     if not args.source.lower().endswith(".solb"):

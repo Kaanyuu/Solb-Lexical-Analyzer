@@ -37,7 +37,7 @@ Unauthorized           | IDENTIFIER
 uint256                | DATA_TYPE
 offerId                | IDENTIFIER
 =                      | ASSIGN_OP
-offer                  | TRADINGFUNC
+offer                  | BUILTIN
 (                      | LPAREN
 buyer                  | IDENTIFIER
 ,                      | COMMA
@@ -51,13 +51,13 @@ USDC                   | IDENTIFIER
 ,                      | COMMA
 usdcPrice              | IDENTIFIER
 ,                      | COMMA
-timeout                | TRADINGFUNC
+timeout                | BUILTIN
 (                      | LPAREN
 2d                     | DURATION
 )                      | RPAREN
 )                      | RPAREN
 ;                      | SEMICOLON
-refund                 | TRADINGFUNC
+refund                 | BUILTIN
 {                      | LBRACE
 seller                 | IDENTIFIER
 .                      | DOT
@@ -86,7 +86,7 @@ public                 | ACCESS_SPECIFIER
 uint256                | DATA_TYPE
 swapId                 | IDENTIFIER
 =                      | ASSIGN_OP
-swap                   | TRADINGFUNC
+swap                   | BUILTIN
 (                      | LPAREN
 buyer                  | IDENTIFIER
 ,                      | COMMA
@@ -100,7 +100,7 @@ USDC                   | IDENTIFIER
 ,                      | COMMA
 15000                  | INTEGER
 ,                      | COMMA
-timeout                | TRADINGFUNC
+timeout                | BUILTIN
 (                      | LPAREN
 12h                    | DURATION
 )                      | RPAREN
@@ -119,7 +119,7 @@ swapId                 | IDENTIFIER
 )                      | RPAREN
 public                 | ACCESS_SPECIFIER
 {                      | LBRACE
-accept                 | TRADINGFUNC
+accept                 | BUILTIN
 (                      | LPAREN
 swapId                 | IDENTIFIER
 )                      | RPAREN
@@ -140,7 +140,7 @@ public                 | ACCESS_SPECIFIER
 uint256                | DATA_TYPE
 orderId                | IDENTIFIER
 =                      | ASSIGN_OP
-order                  | TRADINGFUNC
+order                  | BUILTIN
 buy                    | CONTEXT_KEYWORD
 ETH                    | IDENTIFIER
 {                      | LBRACE
@@ -154,7 +154,7 @@ priceUSDC              | IDENTIFIER
 ;                      | SEMICOLON
 expired                | IDENTIFIER
 :                      | COLON
-timeout                | TRADINGFUNC
+timeout                | BUILTIN
 (                      | LPAREN
 7d                     | DURATION
 )                      | RPAREN
@@ -177,7 +177,7 @@ fillAmount             | IDENTIFIER
 )                      | RPAREN
 public                 | ACCESS_SPECIFIER
 {                      | LBRACE
-accept                 | TRADINGFUNC
+accept                 | BUILTIN
 (                      | LPAREN
 orderId                | IDENTIFIER
 ,                      | COMMA
@@ -198,7 +198,7 @@ orderId                | IDENTIFIER
 )                      | RPAREN
 public                 | ACCESS_SPECIFIER
 {                      | LBRACE
-accept                 | TRADINGFUNC
+accept                 | BUILTIN
 (                      | LPAREN
 orderId                | IDENTIFIER
 )                      | RPAREN
@@ -213,7 +213,7 @@ tradeId                | IDENTIFIER
 )                      | RPAREN
 public                 | ACCESS_SPECIFIER
 {                      | LBRACE
-cancel                 | TRADINGFUNC
+cancel                 | BUILTIN
 (                      | LPAREN
 tradeId                | IDENTIFIER
 )                      | RPAREN
@@ -234,25 +234,25 @@ swapC                  | IDENTIFIER
 )                      | RPAREN
 public                 | ACCESS_SPECIFIER
 {                      | LBRACE
-batch                  | TRADINGFUNC
+batch                  | BUILTIN
 settlement             | IDENTIFIER
 {                      | LBRACE
-timeout                | TRADINGFUNC
+timeout                | BUILTIN
 (                      | LPAREN
 45s                    | DURATION
 )                      | RPAREN
 ;                      | SEMICOLON
-accept                 | TRADINGFUNC
+accept                 | BUILTIN
 (                      | LPAREN
 offerA                 | IDENTIFIER
 )                      | RPAREN
 ;                      | SEMICOLON
-accept                 | TRADINGFUNC
+accept                 | BUILTIN
 (                      | LPAREN
 offerB                 | IDENTIFIER
 )                      | RPAREN
 ;                      | SEMICOLON
-accept                 | TRADINGFUNC
+accept                 | BUILTIN
 (                      | LPAREN
 swapC                  | IDENTIFIER
 )                      | RPAREN
@@ -266,9 +266,9 @@ claimFailedTradeRefund | IDENTIFIER
 )                      | RPAREN
 public                 | ACCESS_SPECIFIER
 {                      | LBRACE
-accept                 | TRADINGFUNC
+accept                 | BUILTIN
 (                      | LPAREN
-refund                 | TRADINGFUNC
+refund                 | BUILTIN
 )                      | RPAREN
 ;                      | SEMICOLON
 }                      | RBRACE
@@ -720,7 +720,7 @@ SCAN | Line 7, Column 30 | Character: [e] | Class: ALPHA
 DFA | Line 7, Column 30 | q228 --[e]--> q229
 SCAN | Line 7, Column 31 | Character: [r] | Class: ALPHA
 DFA | Line 7, Column 31 | q229 --[r]--> q230
-ACCEPT | [offer] | State: q230 | Token: TRADINGFUNC
+ACCEPT | [offer] | State: q230 | Token: BUILTIN
 SCAN | Line 7, Column 32 | Character: [(] | Class: DELIMITER
 DFA | Line 7, Column 32 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -828,7 +828,7 @@ SCAN | Line 7, Column 83 | Character: [u] | Class: ALPHA
 DFA | Line 7, Column 83 | q255 --[u]--> q256
 SCAN | Line 7, Column 84 | Character: [t] | Class: ALPHA
 DFA | Line 7, Column 84 | q256 --[t]--> q257
-ACCEPT | [timeout] | State: q257 | Token: TRADINGFUNC
+ACCEPT | [timeout] | State: q257 | Token: BUILTIN
 SCAN | Line 7, Column 85 | Character: [(] | Class: DELIMITER
 DFA | Line 7, Column 85 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -858,7 +858,7 @@ SCAN | Line 9, Column 13 | Character: [n] | Class: ALPHA
 DFA | Line 9, Column 13 | q248 --[n]--> q249
 SCAN | Line 9, Column 14 | Character: [d] | Class: ALPHA
 DFA | Line 9, Column 14 | q249 --[d]--> q250
-ACCEPT | [refund] | State: q250 | Token: TRADINGFUNC
+ACCEPT | [refund] | State: q250 | Token: BUILTIN
 SCAN | Line 9, Column 16 | Character: [{] | Class: DELIMITER
 DFA | Line 9, Column 16 | q1 --[{]--> q350
 ACCEPT | [{] | State: q350 | Token: LBRACE
@@ -1172,7 +1172,7 @@ SCAN | Line 18, Column 28 | Character: [a] | Class: ALPHA
 DFA | Line 18, Column 28 | q240 --[a]--> q241
 SCAN | Line 18, Column 29 | Character: [p] | Class: ALPHA
 DFA | Line 18, Column 29 | q241 --[p]--> q242
-ACCEPT | [swap] | State: q242 | Token: TRADINGFUNC
+ACCEPT | [swap] | State: q242 | Token: BUILTIN
 SCAN | Line 18, Column 30 | Character: [(] | Class: DELIMITER
 DFA | Line 18, Column 30 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -1262,7 +1262,7 @@ SCAN | Line 18, Column 72 | Character: [u] | Class: ALPHA
 DFA | Line 18, Column 72 | q255 --[u]--> q256
 SCAN | Line 18, Column 73 | Character: [t] | Class: ALPHA
 DFA | Line 18, Column 73 | q256 --[t]--> q257
-ACCEPT | [timeout] | State: q257 | Token: TRADINGFUNC
+ACCEPT | [timeout] | State: q257 | Token: BUILTIN
 SCAN | Line 18, Column 74 | Character: [(] | Class: DELIMITER
 DFA | Line 18, Column 74 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -1448,7 +1448,7 @@ SCAN | Line 24, Column 13 | Character: [p] | Class: ALPHA
 DFA | Line 24, Column 13 | q233 --[p]--> q234
 SCAN | Line 24, Column 14 | Character: [t] | Class: ALPHA
 DFA | Line 24, Column 14 | q234 --[t]--> q235
-ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
+ACCEPT | [accept] | State: q235 | Token: BUILTIN
 SCAN | Line 24, Column 15 | Character: [(] | Class: DELIMITER
 DFA | Line 24, Column 15 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -1690,7 +1690,7 @@ SCAN | Line 29, Column 30 | Character: [e] | Class: ALPHA
 DFA | Line 29, Column 30 | q237 --[e]--> q238
 SCAN | Line 29, Column 31 | Character: [r] | Class: ALPHA
 DFA | Line 29, Column 31 | q238 --[r]--> q239
-ACCEPT | [order] | State: q239 | Token: TRADINGFUNC
+ACCEPT | [order] | State: q239 | Token: BUILTIN
 SCAN | Line 29, Column 33 | Character: [b] | Class: ALPHA
 DFA | Line 29, Column 33 | q1 --[b]--> q51
 SCAN | Line 29, Column 34 | Character: [u] | Class: ALPHA
@@ -1814,7 +1814,7 @@ SCAN | Line 32, Column 27 | Character: [u] | Class: ALPHA
 DFA | Line 32, Column 27 | q255 --[u]--> q256
 SCAN | Line 32, Column 28 | Character: [t] | Class: ALPHA
 DFA | Line 32, Column 28 | q256 --[t]--> q257
-ACCEPT | [timeout] | State: q257 | Token: TRADINGFUNC
+ACCEPT | [timeout] | State: q257 | Token: BUILTIN
 SCAN | Line 32, Column 29 | Character: [(] | Class: DELIMITER
 DFA | Line 32, Column 29 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -2056,7 +2056,7 @@ SCAN | Line 40, Column 13 | Character: [p] | Class: ALPHA
 DFA | Line 40, Column 13 | q233 --[p]--> q234
 SCAN | Line 40, Column 14 | Character: [t] | Class: ALPHA
 DFA | Line 40, Column 14 | q234 --[t]--> q235
-ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
+ACCEPT | [accept] | State: q235 | Token: BUILTIN
 SCAN | Line 40, Column 15 | Character: [(] | Class: DELIMITER
 DFA | Line 40, Column 15 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -2280,7 +2280,7 @@ SCAN | Line 45, Column 13 | Character: [p] | Class: ALPHA
 DFA | Line 45, Column 13 | q233 --[p]--> q234
 SCAN | Line 45, Column 14 | Character: [t] | Class: ALPHA
 DFA | Line 45, Column 14 | q234 --[t]--> q235
-ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
+ACCEPT | [accept] | State: q235 | Token: BUILTIN
 SCAN | Line 45, Column 15 | Character: [(] | Class: DELIMITER
 DFA | Line 45, Column 15 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -2452,7 +2452,7 @@ SCAN | Line 50, Column 13 | Character: [e] | Class: ALPHA
 DFA | Line 50, Column 13 | q259 --[e]--> q260
 SCAN | Line 50, Column 14 | Character: [l] | Class: ALPHA
 DFA | Line 50, Column 14 | q260 --[l]--> q261
-ACCEPT | [cancel] | State: q261 | Token: TRADINGFUNC
+ACCEPT | [cancel] | State: q261 | Token: BUILTIN
 SCAN | Line 50, Column 15 | Character: [(] | Class: DELIMITER
 DFA | Line 50, Column 15 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -2694,7 +2694,7 @@ SCAN | Line 56, Column 12 | Character: [c] | Class: ALPHA
 DFA | Line 56, Column 12 | q244 --[c]--> q245
 SCAN | Line 56, Column 13 | Character: [h] | Class: ALPHA
 DFA | Line 56, Column 13 | q245 --[h]--> q246
-ACCEPT | [batch] | State: q246 | Token: TRADINGFUNC
+ACCEPT | [batch] | State: q246 | Token: BUILTIN
 SCAN | Line 56, Column 15 | Character: [s] | Class: ALPHA
 DFA | Line 56, Column 15 | q1 --[s]--> q65
 SCAN | Line 56, Column 16 | Character: [e] | Class: ALPHA
@@ -2733,7 +2733,7 @@ SCAN | Line 57, Column 18 | Character: [u] | Class: ALPHA
 DFA | Line 57, Column 18 | q255 --[u]--> q256
 SCAN | Line 57, Column 19 | Character: [t] | Class: ALPHA
 DFA | Line 57, Column 19 | q256 --[t]--> q257
-ACCEPT | [timeout] | State: q257 | Token: TRADINGFUNC
+ACCEPT | [timeout] | State: q257 | Token: BUILTIN
 SCAN | Line 57, Column 20 | Character: [(] | Class: DELIMITER
 DFA | Line 57, Column 20 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -2762,7 +2762,7 @@ SCAN | Line 58, Column 17 | Character: [p] | Class: ALPHA
 DFA | Line 58, Column 17 | q233 --[p]--> q234
 SCAN | Line 58, Column 18 | Character: [t] | Class: ALPHA
 DFA | Line 58, Column 18 | q234 --[t]--> q235
-ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
+ACCEPT | [accept] | State: q235 | Token: BUILTIN
 SCAN | Line 58, Column 19 | Character: [(] | Class: DELIMITER
 DFA | Line 58, Column 19 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -2797,7 +2797,7 @@ SCAN | Line 59, Column 17 | Character: [p] | Class: ALPHA
 DFA | Line 59, Column 17 | q233 --[p]--> q234
 SCAN | Line 59, Column 18 | Character: [t] | Class: ALPHA
 DFA | Line 59, Column 18 | q234 --[t]--> q235
-ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
+ACCEPT | [accept] | State: q235 | Token: BUILTIN
 SCAN | Line 59, Column 19 | Character: [(] | Class: DELIMITER
 DFA | Line 59, Column 19 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -2832,7 +2832,7 @@ SCAN | Line 60, Column 17 | Character: [p] | Class: ALPHA
 DFA | Line 60, Column 17 | q233 --[p]--> q234
 SCAN | Line 60, Column 18 | Character: [t] | Class: ALPHA
 DFA | Line 60, Column 18 | q234 --[t]--> q235
-ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
+ACCEPT | [accept] | State: q235 | Token: BUILTIN
 SCAN | Line 60, Column 19 | Character: [(] | Class: DELIMITER
 DFA | Line 60, Column 19 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -2983,7 +2983,7 @@ SCAN | Line 66, Column 13 | Character: [p] | Class: ALPHA
 DFA | Line 66, Column 13 | q233 --[p]--> q234
 SCAN | Line 66, Column 14 | Character: [t] | Class: ALPHA
 DFA | Line 66, Column 14 | q234 --[t]--> q235
-ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
+ACCEPT | [accept] | State: q235 | Token: BUILTIN
 SCAN | Line 66, Column 15 | Character: [(] | Class: DELIMITER
 DFA | Line 66, Column 15 | q1 --[(]--> q348
 ACCEPT | [(] | State: q348 | Token: LPAREN
@@ -2999,7 +2999,7 @@ SCAN | Line 66, Column 20 | Character: [n] | Class: ALPHA
 DFA | Line 66, Column 20 | q248 --[n]--> q249
 SCAN | Line 66, Column 21 | Character: [d] | Class: ALPHA
 DFA | Line 66, Column 21 | q249 --[d]--> q250
-ACCEPT | [refund] | State: q250 | Token: TRADINGFUNC
+ACCEPT | [refund] | State: q250 | Token: BUILTIN
 SCAN | Line 66, Column 22 | Character: [)] | Class: DELIMITER
 DFA | Line 66, Column 22 | q1 --[)]--> q349
 ACCEPT | [)] | State: q349 | Token: RPAREN
