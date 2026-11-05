@@ -18,7 +18,7 @@ import sys
 from dataclasses import dataclass
 
 # --------------------------------------------------------------------------
-# Language definition (from the Solb PL design document)
+# Language definition
 # --------------------------------------------------------------------------
 
 KEYWORDS = {}
@@ -60,8 +60,7 @@ _add("GLOBAL",
 _add("BOOL_LITERAL",
       "true false")
 
-# Longest match first: 3-char, then 2-char, then 1-char operators.
-OPS3 = {"<<=": "ASSIGN_OP", ">>=": "ASSIGN_OP"}
+# Longest match first:2-char, then 1-char operators.
 
 OPS2 = {
     "+=": "ASSIGN_OP", "-=": "ASSIGN_OP", "*=": "ASSIGN_OP", "/=": "ASSIGN_OP",
@@ -72,7 +71,6 @@ OPS2 = {
     "&&": "LOGICAL_OP", "||": "LOGICAL_OP",
     "==": "RELATIONAL_OP", "!=": "RELATIONAL_OP",
     "<=": "RELATIONAL_OP", ">=": "RELATIONAL_OP",
-    "<<": "BITWISE_OP", ">>": "BITWISE_OP",
     "=>": "ARROW",
 }
 
@@ -144,7 +142,7 @@ TRANSITION = {}   # (state, char) -> state, for the keyword + operator tries
 
 def _build_tries():
     nxt = FIRST_TRIE_STATE
-    words = list(KEYWORDS) + list(OPS3) + list(OPS2) + list(OPS1)
+    words = list(KEYWORDS) + list(OPS2) + list(OPS1)
     for w in words:
         state = START
         for ch in w:
@@ -325,10 +323,7 @@ def tokenize(src):
 
         # ---- operators and delimiters (longest match) ---------------------
         three, two = src[i:i + 3], src[i:i + 2]
-        if three in OPS3:
-            emit(OPS3[three], i, i + 3, "op")
-            i += 3
-        elif two in OPS2:
+        if two in OPS2:
             emit(OPS2[two], i, i + 2, "op")
             i += 2
         elif c in OPS1:
@@ -486,7 +481,7 @@ def build_trace(src, segs, lc):
 
 
 # --------------------------------------------------------------------------
-# Reporting
+# Symbol Table
 # --------------------------------------------------------------------------
 
 def build_symbol_table(tokens):
@@ -498,7 +493,7 @@ def build_symbol_table(tokens):
 
 
 def render_symbol_table(tokens):
-    # Every occurrence is listed, in source order (repeats are NOT merged).
+    # Every occurrence is listed, in source order.
     rows = [(t.lexeme, t.type) for t in tokens]
     width = max([len("Lexeme")] + [len(lex) for lex, _ in rows])
     out = [f"{'Lexeme':<{width}} | Token",

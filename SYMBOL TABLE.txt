@@ -325,9 +325,9 @@ CHARACTER-BY-CHARACTER SCAN AND DFA TRANSITIONS
 ACCEPT rows show the final accepting state and token category.
 REJECT rows show lexemes that reached no accepting token state.
 SCAN | Line 1, Column 1 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 1, Column 1 | q1 --[/]--> q324
+DFA | Line 1, Column 1 | q1 --[/]--> q318
 SCAN | Line 1, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 1, Column 2 | q324 --[/]--> q14
+DFA | Line 1, Column 2 | q318 --[/]--> q14
 SCAN | Line 1, Column 3 | Character: [C] | Class: COMMENT
 DFA | Line 1, Column 3 | q14 --[C]--> q14
 SCAN | Line 1, Column 4 | Character: [r] | Class: COMMENT
@@ -411,8 +411,8 @@ SCAN | Line 2, Column 33 | Character: [e] | Class: ALPHA
 DFA | Line 2, Column 33 | q2 --[e]--> q2
 ACCEPT | [createEscrowTrade] | State: q2 | Token: IDENTIFIER
 SCAN | Line 2, Column 34 | Character: [(] | Class: DELIMITER
-DFA | Line 2, Column 34 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 2, Column 34 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 2, Column 35 | Character: [a] | Class: ALPHA
 DFA | Line 2, Column 35 | q1 --[a]--> q58
 SCAN | Line 2, Column 36 | Character: [d] | Class: ALPHA
@@ -442,8 +442,8 @@ SCAN | Line 2, Column 48 | Character: [r] | Class: ALPHA
 DFA | Line 2, Column 48 | q2 --[r]--> q2
 ACCEPT | [seller] | State: q2 | Token: IDENTIFIER
 SCAN | Line 2, Column 49 | Character: [,] | Class: DELIMITER
-DFA | Line 2, Column 49 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 2, Column 49 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 2, Column 51 | Character: [a] | Class: ALPHA
 DFA | Line 2, Column 51 | q1 --[a]--> q58
 SCAN | Line 2, Column 52 | Character: [d] | Class: ALPHA
@@ -471,8 +471,8 @@ SCAN | Line 2, Column 63 | Character: [r] | Class: ALPHA
 DFA | Line 2, Column 63 | q2 --[r]--> q2
 ACCEPT | [buyer] | State: q2 | Token: IDENTIFIER
 SCAN | Line 2, Column 64 | Character: [,] | Class: DELIMITER
-DFA | Line 2, Column 64 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 2, Column 64 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 2, Column 66 | Character: [u] | Class: ALPHA
 DFA | Line 2, Column 66 | q1 --[u]--> q20
 SCAN | Line 2, Column 67 | Character: [i] | Class: ALPHA
@@ -502,8 +502,8 @@ SCAN | Line 2, Column 79 | Character: [t] | Class: ALPHA
 DFA | Line 2, Column 79 | q2 --[t]--> q2
 ACCEPT | [ethAmt] | State: q2 | Token: IDENTIFIER
 SCAN | Line 2, Column 80 | Character: [,] | Class: DELIMITER
-DFA | Line 2, Column 80 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 2, Column 80 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 2, Column 82 | Character: [u] | Class: ALPHA
 DFA | Line 2, Column 82 | q1 --[u]--> q20
 SCAN | Line 2, Column 83 | Character: [i] | Class: ALPHA
@@ -539,8 +539,8 @@ SCAN | Line 2, Column 98 | Character: [e] | Class: ALPHA
 DFA | Line 2, Column 98 | q2 --[e]--> q2
 ACCEPT | [usdcPrice] | State: q2 | Token: IDENTIFIER
 SCAN | Line 2, Column 99 | Character: [)] | Class: DELIMITER
-DFA | Line 2, Column 99 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 2, Column 99 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 2, Column 101 | Character: [p] | Class: ALPHA
 DFA | Line 2, Column 101 | q1 --[p]--> q186
 SCAN | Line 2, Column 102 | Character: [u] | Class: ALPHA
@@ -570,16 +570,16 @@ SCAN | Line 2, Column 114 | Character: [e] | Class: ALPHA
 DFA | Line 2, Column 114 | q207 --[e]--> q208
 ACCEPT | [payable] | State: q208 | Token: MUTABILITY
 SCAN | Line 2, Column 116 | Character: [{] | Class: DELIMITER
-DFA | Line 2, Column 116 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 2, Column 116 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 3, Column 9 | Character: [i] | Class: ALPHA
 DFA | Line 3, Column 9 | q1 --[i]--> q36
 SCAN | Line 3, Column 10 | Character: [f] | Class: ALPHA
 DFA | Line 3, Column 10 | q36 --[f]--> q127
 ACCEPT | [if] | State: q127 | Token: KEYWORD
 SCAN | Line 3, Column 12 | Character: [(] | Class: DELIMITER
-DFA | Line 3, Column 12 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 3, Column 12 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 3, Column 13 | Character: [m] | Class: ALPHA
 DFA | Line 3, Column 13 | q1 --[m]--> q86
 SCAN | Line 3, Column 14 | Character: [s] | Class: ALPHA
@@ -588,8 +588,8 @@ SCAN | Line 3, Column 15 | Character: [g] | Class: ALPHA
 DFA | Line 3, Column 15 | q290 --[g]--> q291
 ACCEPT | [msg] | State: q291 | Token: GLOBAL
 SCAN | Line 3, Column 16 | Character: [.] | Class: DELIMITER
-DFA | Line 3, Column 16 | q1 --[.]--> q350
-ACCEPT | [.] | State: q350 | Token: DOT
+DFA | Line 3, Column 16 | q1 --[.]--> q346
+ACCEPT | [.] | State: q346 | Token: DOT
 SCAN | Line 3, Column 17 | Character: [s] | Class: ALPHA
 DFA | Line 3, Column 17 | q1 --[s]--> q65
 SCAN | Line 3, Column 18 | Character: [e] | Class: ALPHA
@@ -604,10 +604,10 @@ SCAN | Line 3, Column 22 | Character: [r] | Class: ALPHA
 DFA | Line 3, Column 22 | q299 --[r]--> q300
 ACCEPT | [sender] | State: q300 | Token: GLOBAL
 SCAN | Line 3, Column 24 | Character: [!] | Class: OPERATOR
-DFA | Line 3, Column 24 | q1 --[!]--> q343
+DFA | Line 3, Column 24 | q1 --[!]--> q337
 SCAN | Line 3, Column 25 | Character: [=] | Class: OPERATOR
-DFA | Line 3, Column 25 | q343 --[=]--> q344
-ACCEPT | [!=] | State: q344 | Token: RELATIONAL_OP
+DFA | Line 3, Column 25 | q337 --[=]--> q338
+ACCEPT | [!=] | State: q338 | Token: RELATIONAL_OP
 SCAN | Line 3, Column 27 | Character: [s] | Class: ALPHA
 DFA | Line 3, Column 27 | q1 --[s]--> q65
 SCAN | Line 3, Column 28 | Character: [e] | Class: ALPHA
@@ -622,11 +622,11 @@ SCAN | Line 3, Column 32 | Character: [r] | Class: ALPHA
 DFA | Line 3, Column 32 | q2 --[r]--> q2
 ACCEPT | [seller] | State: q2 | Token: IDENTIFIER
 SCAN | Line 3, Column 33 | Character: [)] | Class: DELIMITER
-DFA | Line 3, Column 33 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 3, Column 33 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 3, Column 35 | Character: [{] | Class: DELIMITER
-DFA | Line 3, Column 35 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 3, Column 35 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 4, Column 13 | Character: [r] | Class: ALPHA
 DFA | Line 4, Column 13 | q1 --[r]--> q99
 SCAN | Line 4, Column 14 | Character: [e] | Class: ALPHA
@@ -666,17 +666,17 @@ SCAN | Line 4, Column 31 | Character: [d] | Class: ALPHA
 DFA | Line 4, Column 31 | q2 --[d]--> q2
 ACCEPT | [Unauthorized] | State: q2 | Token: IDENTIFIER
 SCAN | Line 4, Column 32 | Character: [(] | Class: DELIMITER
-DFA | Line 4, Column 32 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 4, Column 32 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 4, Column 33 | Character: [)] | Class: DELIMITER
-DFA | Line 4, Column 33 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 4, Column 33 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 4, Column 34 | Character: [;] | Class: DELIMITER
-DFA | Line 4, Column 34 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 4, Column 34 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 5, Column 9 | Character: [}] | Class: DELIMITER
-DFA | Line 5, Column 9 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 5, Column 9 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 7, Column 9 | Character: [u] | Class: ALPHA
 DFA | Line 7, Column 9 | q1 --[u]--> q20
 SCAN | Line 7, Column 10 | Character: [i] | Class: ALPHA
@@ -708,8 +708,8 @@ SCAN | Line 7, Column 23 | Character: [d] | Class: ALPHA
 DFA | Line 7, Column 23 | q2 --[d]--> q2
 ACCEPT | [offerId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 7, Column 25 | Character: [=] | Class: OPERATOR
-DFA | Line 7, Column 25 | q1 --[=]--> q341
-ACCEPT | [=] | State: q341 | Token: ASSIGN_OP
+DFA | Line 7, Column 25 | q1 --[=]--> q335
+ACCEPT | [=] | State: q335 | Token: ASSIGN_OP
 SCAN | Line 7, Column 27 | Character: [o] | Class: ALPHA
 DFA | Line 7, Column 27 | q1 --[o]--> q226
 SCAN | Line 7, Column 28 | Character: [f] | Class: ALPHA
@@ -722,8 +722,8 @@ SCAN | Line 7, Column 31 | Character: [r] | Class: ALPHA
 DFA | Line 7, Column 31 | q229 --[r]--> q230
 ACCEPT | [offer] | State: q230 | Token: TRADINGFUNC
 SCAN | Line 7, Column 32 | Character: [(] | Class: DELIMITER
-DFA | Line 7, Column 32 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 7, Column 32 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 7, Column 33 | Character: [b] | Class: ALPHA
 DFA | Line 7, Column 33 | q1 --[b]--> q51
 SCAN | Line 7, Column 34 | Character: [u] | Class: ALPHA
@@ -736,8 +736,8 @@ SCAN | Line 7, Column 37 | Character: [r] | Class: ALPHA
 DFA | Line 7, Column 37 | q2 --[r]--> q2
 ACCEPT | [buyer] | State: q2 | Token: IDENTIFIER
 SCAN | Line 7, Column 38 | Character: [,] | Class: DELIMITER
-DFA | Line 7, Column 38 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 7, Column 38 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 7, Column 40 | Character: [s] | Class: ALPHA
 DFA | Line 7, Column 40 | q1 --[s]--> q65
 SCAN | Line 7, Column 41 | Character: [e] | Class: ALPHA
@@ -752,8 +752,8 @@ SCAN | Line 7, Column 45 | Character: [r] | Class: ALPHA
 DFA | Line 7, Column 45 | q2 --[r]--> q2
 ACCEPT | [seller] | State: q2 | Token: IDENTIFIER
 SCAN | Line 7, Column 46 | Character: [,] | Class: DELIMITER
-DFA | Line 7, Column 46 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 7, Column 46 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 7, Column 48 | Character: [E] | Class: ALPHA
 DFA | Line 7, Column 48 | q1 --[E]--> q2
 SCAN | Line 7, Column 49 | Character: [T] | Class: ALPHA
@@ -762,8 +762,8 @@ SCAN | Line 7, Column 50 | Character: [H] | Class: ALPHA
 DFA | Line 7, Column 50 | q2 --[H]--> q2
 ACCEPT | [ETH] | State: q2 | Token: IDENTIFIER
 SCAN | Line 7, Column 51 | Character: [,] | Class: DELIMITER
-DFA | Line 7, Column 51 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 7, Column 51 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 7, Column 53 | Character: [e] | Class: ALPHA
 DFA | Line 7, Column 53 | q1 --[e]--> q79
 SCAN | Line 7, Column 54 | Character: [t] | Class: ALPHA
@@ -778,8 +778,8 @@ SCAN | Line 7, Column 58 | Character: [t] | Class: ALPHA
 DFA | Line 7, Column 58 | q2 --[t]--> q2
 ACCEPT | [ethAmt] | State: q2 | Token: IDENTIFIER
 SCAN | Line 7, Column 59 | Character: [,] | Class: DELIMITER
-DFA | Line 7, Column 59 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 7, Column 59 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 7, Column 61 | Character: [U] | Class: ALPHA
 DFA | Line 7, Column 61 | q1 --[U]--> q2
 SCAN | Line 7, Column 62 | Character: [S] | Class: ALPHA
@@ -790,8 +790,8 @@ SCAN | Line 7, Column 64 | Character: [C] | Class: ALPHA
 DFA | Line 7, Column 64 | q2 --[C]--> q2
 ACCEPT | [USDC] | State: q2 | Token: IDENTIFIER
 SCAN | Line 7, Column 65 | Character: [,] | Class: DELIMITER
-DFA | Line 7, Column 65 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 7, Column 65 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 7, Column 67 | Character: [u] | Class: ALPHA
 DFA | Line 7, Column 67 | q1 --[u]--> q20
 SCAN | Line 7, Column 68 | Character: [s] | Class: ALPHA
@@ -812,8 +812,8 @@ SCAN | Line 7, Column 75 | Character: [e] | Class: ALPHA
 DFA | Line 7, Column 75 | q2 --[e]--> q2
 ACCEPT | [usdcPrice] | State: q2 | Token: IDENTIFIER
 SCAN | Line 7, Column 76 | Character: [,] | Class: DELIMITER
-DFA | Line 7, Column 76 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 7, Column 76 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 7, Column 78 | Character: [t] | Class: ALPHA
 DFA | Line 7, Column 78 | q1 --[t]--> q251
 SCAN | Line 7, Column 79 | Character: [i] | Class: ALPHA
@@ -830,22 +830,22 @@ SCAN | Line 7, Column 84 | Character: [t] | Class: ALPHA
 DFA | Line 7, Column 84 | q256 --[t]--> q257
 ACCEPT | [timeout] | State: q257 | Token: TRADINGFUNC
 SCAN | Line 7, Column 85 | Character: [(] | Class: DELIMITER
-DFA | Line 7, Column 85 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 7, Column 85 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 7, Column 86 | Character: [2] | Class: DIGIT
 DFA | Line 7, Column 86 | q1 --[2]--> q3
 SCAN | Line 7, Column 87 | Character: [d] | Class: ALPHA
 DFA | Line 7, Column 87 | q3 --[d]--> q8
 ACCEPT | [2d] | State: q8 | Token: DURATION
 SCAN | Line 7, Column 88 | Character: [)] | Class: DELIMITER
-DFA | Line 7, Column 88 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 7, Column 88 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 7, Column 89 | Character: [)] | Class: DELIMITER
-DFA | Line 7, Column 89 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 7, Column 89 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 7, Column 90 | Character: [;] | Class: DELIMITER
-DFA | Line 7, Column 90 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 7, Column 90 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 9, Column 9 | Character: [r] | Class: ALPHA
 DFA | Line 9, Column 9 | q1 --[r]--> q99
 SCAN | Line 9, Column 10 | Character: [e] | Class: ALPHA
@@ -860,8 +860,8 @@ SCAN | Line 9, Column 14 | Character: [d] | Class: ALPHA
 DFA | Line 9, Column 14 | q249 --[d]--> q250
 ACCEPT | [refund] | State: q250 | Token: TRADINGFUNC
 SCAN | Line 9, Column 16 | Character: [{] | Class: DELIMITER
-DFA | Line 9, Column 16 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 9, Column 16 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 10, Column 13 | Character: [s] | Class: ALPHA
 DFA | Line 10, Column 13 | q1 --[s]--> q65
 SCAN | Line 10, Column 14 | Character: [e] | Class: ALPHA
@@ -876,8 +876,8 @@ SCAN | Line 10, Column 18 | Character: [r] | Class: ALPHA
 DFA | Line 10, Column 18 | q2 --[r]--> q2
 ACCEPT | [seller] | State: q2 | Token: IDENTIFIER
 SCAN | Line 10, Column 19 | Character: [.] | Class: DELIMITER
-DFA | Line 10, Column 19 | q1 --[.]--> q350
-ACCEPT | [.] | State: q350 | Token: DOT
+DFA | Line 10, Column 19 | q1 --[.]--> q346
+ACCEPT | [.] | State: q346 | Token: DOT
 SCAN | Line 10, Column 20 | Character: [t] | Class: ALPHA
 DFA | Line 10, Column 20 | q1 --[t]--> q251
 SCAN | Line 10, Column 21 | Character: [r] | Class: ALPHA
@@ -896,8 +896,8 @@ SCAN | Line 10, Column 27 | Character: [r] | Class: ALPHA
 DFA | Line 10, Column 27 | q2 --[r]--> q2
 ACCEPT | [transfer] | State: q2 | Token: IDENTIFIER
 SCAN | Line 10, Column 28 | Character: [(] | Class: DELIMITER
-DFA | Line 10, Column 28 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 10, Column 28 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 10, Column 29 | Character: [1] | Class: DIGIT
 DFA | Line 10, Column 29 | q1 --[1]--> q3
 SCAN | Line 10, Column 30 | Character: [0] | Class: DIGIT
@@ -914,14 +914,14 @@ SCAN | Line 10, Column 35 | Character: [i] | Class: ALPHA
 DFA | Line 10, Column 35 | q10 --[i]--> q10
 ACCEPT | [100 wei] | State: q10 | Token: ASSET_LITERAL
 SCAN | Line 10, Column 36 | Character: [)] | Class: DELIMITER
-DFA | Line 10, Column 36 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 10, Column 36 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 10, Column 37 | Character: [;] | Class: DELIMITER
-DFA | Line 10, Column 37 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 10, Column 37 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 11, Column 9 | Character: [}] | Class: DELIMITER
-DFA | Line 11, Column 9 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 11, Column 9 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 13, Column 9 | Character: [r] | Class: ALPHA
 DFA | Line 13, Column 9 | q1 --[r]--> q99
 SCAN | Line 13, Column 10 | Character: [e] | Class: ALPHA
@@ -951,15 +951,15 @@ SCAN | Line 13, Column 22 | Character: [d] | Class: ALPHA
 DFA | Line 13, Column 22 | q2 --[d]--> q2
 ACCEPT | [offerId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 13, Column 23 | Character: [;] | Class: DELIMITER
-DFA | Line 13, Column 23 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 13, Column 23 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 14, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 14, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 14, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 16, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 16, Column 2 | q1 --[/]--> q324
+DFA | Line 16, Column 2 | q1 --[/]--> q318
 SCAN | Line 16, Column 3 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 16, Column 3 | q324 --[/]--> q14
+DFA | Line 16, Column 3 | q318 --[/]--> q14
 SCAN | Line 16, Column 4 | Character: [S] | Class: COMMENT
 DFA | Line 16, Column 4 | q14 --[S]--> q14
 SCAN | Line 16, Column 5 | Character: [w] | Class: COMMENT
@@ -1055,8 +1055,8 @@ SCAN | Line 17, Column 34 | Character: [p] | Class: ALPHA
 DFA | Line 17, Column 34 | q2 --[p]--> q2
 ACCEPT | [proposeInstantSwap] | State: q2 | Token: IDENTIFIER
 SCAN | Line 17, Column 35 | Character: [(] | Class: DELIMITER
-DFA | Line 17, Column 35 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 17, Column 35 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 17, Column 36 | Character: [a] | Class: ALPHA
 DFA | Line 17, Column 36 | q1 --[a]--> q58
 SCAN | Line 17, Column 37 | Character: [d] | Class: ALPHA
@@ -1086,8 +1086,8 @@ SCAN | Line 17, Column 49 | Character: [r] | Class: ALPHA
 DFA | Line 17, Column 49 | q2 --[r]--> q2
 ACCEPT | [seller] | State: q2 | Token: IDENTIFIER
 SCAN | Line 17, Column 50 | Character: [,] | Class: DELIMITER
-DFA | Line 17, Column 50 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 17, Column 50 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 17, Column 52 | Character: [a] | Class: ALPHA
 DFA | Line 17, Column 52 | q1 --[a]--> q58
 SCAN | Line 17, Column 53 | Character: [d] | Class: ALPHA
@@ -1115,8 +1115,8 @@ SCAN | Line 17, Column 64 | Character: [r] | Class: ALPHA
 DFA | Line 17, Column 64 | q2 --[r]--> q2
 ACCEPT | [buyer] | State: q2 | Token: IDENTIFIER
 SCAN | Line 17, Column 65 | Character: [)] | Class: DELIMITER
-DFA | Line 17, Column 65 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 17, Column 65 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 17, Column 67 | Character: [p] | Class: ALPHA
 DFA | Line 17, Column 67 | q1 --[p]--> q186
 SCAN | Line 17, Column 68 | Character: [u] | Class: ALPHA
@@ -1131,8 +1131,8 @@ SCAN | Line 17, Column 72 | Character: [c] | Class: ALPHA
 DFA | Line 17, Column 72 | q196 --[c]--> q197
 ACCEPT | [public] | State: q197 | Token: ACCESS_SPECIFIER
 SCAN | Line 17, Column 74 | Character: [{] | Class: DELIMITER
-DFA | Line 17, Column 74 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 17, Column 74 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 18, Column 9 | Character: [u] | Class: ALPHA
 DFA | Line 18, Column 9 | q1 --[u]--> q20
 SCAN | Line 18, Column 10 | Character: [i] | Class: ALPHA
@@ -1162,8 +1162,8 @@ SCAN | Line 18, Column 22 | Character: [d] | Class: ALPHA
 DFA | Line 18, Column 22 | q2 --[d]--> q2
 ACCEPT | [swapId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 18, Column 24 | Character: [=] | Class: OPERATOR
-DFA | Line 18, Column 24 | q1 --[=]--> q341
-ACCEPT | [=] | State: q341 | Token: ASSIGN_OP
+DFA | Line 18, Column 24 | q1 --[=]--> q335
+ACCEPT | [=] | State: q335 | Token: ASSIGN_OP
 SCAN | Line 18, Column 26 | Character: [s] | Class: ALPHA
 DFA | Line 18, Column 26 | q1 --[s]--> q65
 SCAN | Line 18, Column 27 | Character: [w] | Class: ALPHA
@@ -1174,8 +1174,8 @@ SCAN | Line 18, Column 29 | Character: [p] | Class: ALPHA
 DFA | Line 18, Column 29 | q241 --[p]--> q242
 ACCEPT | [swap] | State: q242 | Token: TRADINGFUNC
 SCAN | Line 18, Column 30 | Character: [(] | Class: DELIMITER
-DFA | Line 18, Column 30 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 18, Column 30 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 18, Column 31 | Character: [b] | Class: ALPHA
 DFA | Line 18, Column 31 | q1 --[b]--> q51
 SCAN | Line 18, Column 32 | Character: [u] | Class: ALPHA
@@ -1188,8 +1188,8 @@ SCAN | Line 18, Column 35 | Character: [r] | Class: ALPHA
 DFA | Line 18, Column 35 | q2 --[r]--> q2
 ACCEPT | [buyer] | State: q2 | Token: IDENTIFIER
 SCAN | Line 18, Column 36 | Character: [,] | Class: DELIMITER
-DFA | Line 18, Column 36 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 18, Column 36 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 18, Column 38 | Character: [s] | Class: ALPHA
 DFA | Line 18, Column 38 | q1 --[s]--> q65
 SCAN | Line 18, Column 39 | Character: [e] | Class: ALPHA
@@ -1204,8 +1204,8 @@ SCAN | Line 18, Column 43 | Character: [r] | Class: ALPHA
 DFA | Line 18, Column 43 | q2 --[r]--> q2
 ACCEPT | [seller] | State: q2 | Token: IDENTIFIER
 SCAN | Line 18, Column 44 | Character: [,] | Class: DELIMITER
-DFA | Line 18, Column 44 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 18, Column 44 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 18, Column 46 | Character: [E] | Class: ALPHA
 DFA | Line 18, Column 46 | q1 --[E]--> q2
 SCAN | Line 18, Column 47 | Character: [T] | Class: ALPHA
@@ -1214,14 +1214,14 @@ SCAN | Line 18, Column 48 | Character: [H] | Class: ALPHA
 DFA | Line 18, Column 48 | q2 --[H]--> q2
 ACCEPT | [ETH] | State: q2 | Token: IDENTIFIER
 SCAN | Line 18, Column 49 | Character: [,] | Class: DELIMITER
-DFA | Line 18, Column 49 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 18, Column 49 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 18, Column 51 | Character: [5] | Class: DIGIT
 DFA | Line 18, Column 51 | q1 --[5]--> q3
 ACCEPT | [5] | State: q3 | Token: INTEGER
 SCAN | Line 18, Column 52 | Character: [,] | Class: DELIMITER
-DFA | Line 18, Column 52 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 18, Column 52 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 18, Column 54 | Character: [U] | Class: ALPHA
 DFA | Line 18, Column 54 | q1 --[U]--> q2
 SCAN | Line 18, Column 55 | Character: [S] | Class: ALPHA
@@ -1232,8 +1232,8 @@ SCAN | Line 18, Column 57 | Character: [C] | Class: ALPHA
 DFA | Line 18, Column 57 | q2 --[C]--> q2
 ACCEPT | [USDC] | State: q2 | Token: IDENTIFIER
 SCAN | Line 18, Column 58 | Character: [,] | Class: DELIMITER
-DFA | Line 18, Column 58 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 18, Column 58 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 18, Column 60 | Character: [1] | Class: DIGIT
 DFA | Line 18, Column 60 | q1 --[1]--> q3
 SCAN | Line 18, Column 61 | Character: [5] | Class: DIGIT
@@ -1246,8 +1246,8 @@ SCAN | Line 18, Column 64 | Character: [0] | Class: DIGIT
 DFA | Line 18, Column 64 | q3 --[0]--> q3
 ACCEPT | [15000] | State: q3 | Token: INTEGER
 SCAN | Line 18, Column 65 | Character: [,] | Class: DELIMITER
-DFA | Line 18, Column 65 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 18, Column 65 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 18, Column 67 | Character: [t] | Class: ALPHA
 DFA | Line 18, Column 67 | q1 --[t]--> q251
 SCAN | Line 18, Column 68 | Character: [i] | Class: ALPHA
@@ -1264,8 +1264,8 @@ SCAN | Line 18, Column 73 | Character: [t] | Class: ALPHA
 DFA | Line 18, Column 73 | q256 --[t]--> q257
 ACCEPT | [timeout] | State: q257 | Token: TRADINGFUNC
 SCAN | Line 18, Column 74 | Character: [(] | Class: DELIMITER
-DFA | Line 18, Column 74 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 18, Column 74 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 18, Column 75 | Character: [1] | Class: DIGIT
 DFA | Line 18, Column 75 | q1 --[1]--> q3
 SCAN | Line 18, Column 76 | Character: [2] | Class: DIGIT
@@ -1274,14 +1274,14 @@ SCAN | Line 18, Column 77 | Character: [h] | Class: ALPHA
 DFA | Line 18, Column 77 | q3 --[h]--> q8
 ACCEPT | [12h] | State: q8 | Token: DURATION
 SCAN | Line 18, Column 78 | Character: [)] | Class: DELIMITER
-DFA | Line 18, Column 78 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 18, Column 78 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 18, Column 79 | Character: [)] | Class: DELIMITER
-DFA | Line 18, Column 79 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 18, Column 79 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 18, Column 80 | Character: [;] | Class: DELIMITER
-DFA | Line 18, Column 80 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 18, Column 80 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 19, Column 9 | Character: [r] | Class: ALPHA
 DFA | Line 19, Column 9 | q1 --[r]--> q99
 SCAN | Line 19, Column 10 | Character: [e] | Class: ALPHA
@@ -1309,15 +1309,15 @@ SCAN | Line 19, Column 21 | Character: [d] | Class: ALPHA
 DFA | Line 19, Column 21 | q2 --[d]--> q2
 ACCEPT | [swapId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 19, Column 22 | Character: [;] | Class: DELIMITER
-DFA | Line 19, Column 22 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 19, Column 22 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 20, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 20, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 20, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 22, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 22, Column 2 | q1 --[/]--> q324
+DFA | Line 22, Column 2 | q1 --[/]--> q318
 SCAN | Line 22, Column 3 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 22, Column 3 | q324 --[/]--> q14
+DFA | Line 22, Column 3 | q318 --[/]--> q14
 SCAN | Line 22, Column 4 | Character: [F] | Class: COMMENT
 DFA | Line 22, Column 4 | q14 --[F]--> q14
 SCAN | Line 22, Column 5 | Character: [i] | Class: COMMENT
@@ -1387,8 +1387,8 @@ SCAN | Line 23, Column 25 | Character: [p] | Class: ALPHA
 DFA | Line 23, Column 25 | q2 --[p]--> q2
 ACCEPT | [finalizeSwap] | State: q2 | Token: IDENTIFIER
 SCAN | Line 23, Column 26 | Character: [(] | Class: DELIMITER
-DFA | Line 23, Column 26 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 23, Column 26 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 23, Column 27 | Character: [u] | Class: ALPHA
 DFA | Line 23, Column 27 | q1 --[u]--> q20
 SCAN | Line 23, Column 28 | Character: [i] | Class: ALPHA
@@ -1418,8 +1418,8 @@ SCAN | Line 23, Column 40 | Character: [d] | Class: ALPHA
 DFA | Line 23, Column 40 | q2 --[d]--> q2
 ACCEPT | [swapId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 23, Column 41 | Character: [)] | Class: DELIMITER
-DFA | Line 23, Column 41 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 23, Column 41 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 23, Column 43 | Character: [p] | Class: ALPHA
 DFA | Line 23, Column 43 | q1 --[p]--> q186
 SCAN | Line 23, Column 44 | Character: [u] | Class: ALPHA
@@ -1434,8 +1434,8 @@ SCAN | Line 23, Column 48 | Character: [c] | Class: ALPHA
 DFA | Line 23, Column 48 | q196 --[c]--> q197
 ACCEPT | [public] | State: q197 | Token: ACCESS_SPECIFIER
 SCAN | Line 23, Column 50 | Character: [{] | Class: DELIMITER
-DFA | Line 23, Column 50 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 23, Column 50 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 24, Column 9 | Character: [a] | Class: ALPHA
 DFA | Line 24, Column 9 | q1 --[a]--> q58
 SCAN | Line 24, Column 10 | Character: [c] | Class: ALPHA
@@ -1450,8 +1450,8 @@ SCAN | Line 24, Column 14 | Character: [t] | Class: ALPHA
 DFA | Line 24, Column 14 | q234 --[t]--> q235
 ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
 SCAN | Line 24, Column 15 | Character: [(] | Class: DELIMITER
-DFA | Line 24, Column 15 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 24, Column 15 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 24, Column 16 | Character: [s] | Class: ALPHA
 DFA | Line 24, Column 16 | q1 --[s]--> q65
 SCAN | Line 24, Column 17 | Character: [w] | Class: ALPHA
@@ -1466,18 +1466,18 @@ SCAN | Line 24, Column 21 | Character: [d] | Class: ALPHA
 DFA | Line 24, Column 21 | q2 --[d]--> q2
 ACCEPT | [swapId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 24, Column 22 | Character: [)] | Class: DELIMITER
-DFA | Line 24, Column 22 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 24, Column 22 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 24, Column 23 | Character: [;] | Class: DELIMITER
-DFA | Line 24, Column 23 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 24, Column 23 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 25, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 25, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 25, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 27, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 27, Column 2 | q1 --[/]--> q324
+DFA | Line 27, Column 2 | q1 --[/]--> q318
 SCAN | Line 27, Column 3 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 27, Column 3 | q324 --[/]--> q14
+DFA | Line 27, Column 3 | q318 --[/]--> q14
 SCAN | Line 27, Column 4 | Character: [O] | Class: COMMENT
 DFA | Line 27, Column 4 | q14 --[O]--> q14
 SCAN | Line 27, Column 5 | Character: [r] | Class: COMMENT
@@ -1555,8 +1555,8 @@ SCAN | Line 28, Column 28 | Character: [r] | Class: ALPHA
 DFA | Line 28, Column 28 | q2 --[r]--> q2
 ACCEPT | [postBuyOrder] | State: q2 | Token: IDENTIFIER
 SCAN | Line 28, Column 29 | Character: [(] | Class: DELIMITER
-DFA | Line 28, Column 29 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 28, Column 29 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 28, Column 30 | Character: [u] | Class: ALPHA
 DFA | Line 28, Column 30 | q1 --[u]--> q20
 SCAN | Line 28, Column 31 | Character: [i] | Class: ALPHA
@@ -1592,8 +1592,8 @@ SCAN | Line 28, Column 46 | Character: [H] | Class: ALPHA
 DFA | Line 28, Column 46 | q2 --[H]--> q2
 ACCEPT | [amountETH] | State: q2 | Token: IDENTIFIER
 SCAN | Line 28, Column 47 | Character: [,] | Class: DELIMITER
-DFA | Line 28, Column 47 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 28, Column 47 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 28, Column 49 | Character: [u] | Class: ALPHA
 DFA | Line 28, Column 49 | q1 --[u]--> q20
 SCAN | Line 28, Column 50 | Character: [i] | Class: ALPHA
@@ -1629,8 +1629,8 @@ SCAN | Line 28, Column 65 | Character: [C] | Class: ALPHA
 DFA | Line 28, Column 65 | q2 --[C]--> q2
 ACCEPT | [priceUSDC] | State: q2 | Token: IDENTIFIER
 SCAN | Line 28, Column 66 | Character: [)] | Class: DELIMITER
-DFA | Line 28, Column 66 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 28, Column 66 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 28, Column 68 | Character: [p] | Class: ALPHA
 DFA | Line 28, Column 68 | q1 --[p]--> q186
 SCAN | Line 28, Column 69 | Character: [u] | Class: ALPHA
@@ -1645,8 +1645,8 @@ SCAN | Line 28, Column 73 | Character: [c] | Class: ALPHA
 DFA | Line 28, Column 73 | q196 --[c]--> q197
 ACCEPT | [public] | State: q197 | Token: ACCESS_SPECIFIER
 SCAN | Line 28, Column 75 | Character: [{] | Class: DELIMITER
-DFA | Line 28, Column 75 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 28, Column 75 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 29, Column 9 | Character: [u] | Class: ALPHA
 DFA | Line 29, Column 9 | q1 --[u]--> q20
 SCAN | Line 29, Column 10 | Character: [i] | Class: ALPHA
@@ -1678,8 +1678,8 @@ SCAN | Line 29, Column 23 | Character: [d] | Class: ALPHA
 DFA | Line 29, Column 23 | q2 --[d]--> q2
 ACCEPT | [orderId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 29, Column 25 | Character: [=] | Class: OPERATOR
-DFA | Line 29, Column 25 | q1 --[=]--> q341
-ACCEPT | [=] | State: q341 | Token: ASSIGN_OP
+DFA | Line 29, Column 25 | q1 --[=]--> q335
+ACCEPT | [=] | State: q335 | Token: ASSIGN_OP
 SCAN | Line 29, Column 27 | Character: [o] | Class: ALPHA
 DFA | Line 29, Column 27 | q1 --[o]--> q226
 SCAN | Line 29, Column 28 | Character: [r] | Class: ALPHA
@@ -1706,8 +1706,8 @@ SCAN | Line 29, Column 39 | Character: [H] | Class: ALPHA
 DFA | Line 29, Column 39 | q2 --[H]--> q2
 ACCEPT | [ETH] | State: q2 | Token: IDENTIFIER
 SCAN | Line 29, Column 41 | Character: [{] | Class: DELIMITER
-DFA | Line 29, Column 41 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 29, Column 41 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 30, Column 13 | Character: [a] | Class: ALPHA
 DFA | Line 30, Column 13 | q1 --[a]--> q58
 SCAN | Line 30, Column 14 | Character: [m] | Class: ALPHA
@@ -1722,8 +1722,8 @@ SCAN | Line 30, Column 18 | Character: [t] | Class: ALPHA
 DFA | Line 30, Column 18 | q2 --[t]--> q2
 ACCEPT | [amount] | State: q2 | Token: IDENTIFIER
 SCAN | Line 30, Column 19 | Character: [:] | Class: DELIMITER
-DFA | Line 30, Column 19 | q1 --[:]--> q351
-ACCEPT | [:] | State: q351 | Token: COLON
+DFA | Line 30, Column 19 | q1 --[:]--> q347
+ACCEPT | [:] | State: q347 | Token: COLON
 SCAN | Line 30, Column 21 | Character: [a] | Class: ALPHA
 DFA | Line 30, Column 21 | q1 --[a]--> q58
 SCAN | Line 30, Column 22 | Character: [m] | Class: ALPHA
@@ -1744,8 +1744,8 @@ SCAN | Line 30, Column 29 | Character: [H] | Class: ALPHA
 DFA | Line 30, Column 29 | q2 --[H]--> q2
 ACCEPT | [amountETH] | State: q2 | Token: IDENTIFIER
 SCAN | Line 30, Column 30 | Character: [;] | Class: DELIMITER
-DFA | Line 30, Column 30 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 30, Column 30 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 31, Column 13 | Character: [p] | Class: ALPHA
 DFA | Line 31, Column 13 | q1 --[p]--> q186
 SCAN | Line 31, Column 14 | Character: [r] | Class: ALPHA
@@ -1758,8 +1758,8 @@ SCAN | Line 31, Column 17 | Character: [e] | Class: ALPHA
 DFA | Line 31, Column 17 | q2 --[e]--> q2
 ACCEPT | [price] | State: q2 | Token: IDENTIFIER
 SCAN | Line 31, Column 18 | Character: [:] | Class: DELIMITER
-DFA | Line 31, Column 18 | q1 --[:]--> q351
-ACCEPT | [:] | State: q351 | Token: COLON
+DFA | Line 31, Column 18 | q1 --[:]--> q347
+ACCEPT | [:] | State: q347 | Token: COLON
 SCAN | Line 31, Column 20 | Character: [p] | Class: ALPHA
 DFA | Line 31, Column 20 | q1 --[p]--> q186
 SCAN | Line 31, Column 21 | Character: [r] | Class: ALPHA
@@ -1780,8 +1780,8 @@ SCAN | Line 31, Column 28 | Character: [C] | Class: ALPHA
 DFA | Line 31, Column 28 | q2 --[C]--> q2
 ACCEPT | [priceUSDC] | State: q2 | Token: IDENTIFIER
 SCAN | Line 31, Column 29 | Character: [;] | Class: DELIMITER
-DFA | Line 31, Column 29 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 31, Column 29 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 32, Column 13 | Character: [e] | Class: ALPHA
 DFA | Line 32, Column 13 | q1 --[e]--> q79
 SCAN | Line 32, Column 14 | Character: [x] | Class: ALPHA
@@ -1798,8 +1798,8 @@ SCAN | Line 32, Column 19 | Character: [d] | Class: ALPHA
 DFA | Line 32, Column 19 | q2 --[d]--> q2
 ACCEPT | [expired] | State: q2 | Token: IDENTIFIER
 SCAN | Line 32, Column 20 | Character: [:] | Class: DELIMITER
-DFA | Line 32, Column 20 | q1 --[:]--> q351
-ACCEPT | [:] | State: q351 | Token: COLON
+DFA | Line 32, Column 20 | q1 --[:]--> q347
+ACCEPT | [:] | State: q347 | Token: COLON
 SCAN | Line 32, Column 22 | Character: [t] | Class: ALPHA
 DFA | Line 32, Column 22 | q1 --[t]--> q251
 SCAN | Line 32, Column 23 | Character: [i] | Class: ALPHA
@@ -1816,25 +1816,25 @@ SCAN | Line 32, Column 28 | Character: [t] | Class: ALPHA
 DFA | Line 32, Column 28 | q256 --[t]--> q257
 ACCEPT | [timeout] | State: q257 | Token: TRADINGFUNC
 SCAN | Line 32, Column 29 | Character: [(] | Class: DELIMITER
-DFA | Line 32, Column 29 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 32, Column 29 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 32, Column 30 | Character: [7] | Class: DIGIT
 DFA | Line 32, Column 30 | q1 --[7]--> q3
 SCAN | Line 32, Column 31 | Character: [d] | Class: ALPHA
 DFA | Line 32, Column 31 | q3 --[d]--> q8
 ACCEPT | [7d] | State: q8 | Token: DURATION
 SCAN | Line 32, Column 32 | Character: [)] | Class: DELIMITER
-DFA | Line 32, Column 32 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 32, Column 32 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 32, Column 33 | Character: [;] | Class: DELIMITER
-DFA | Line 32, Column 33 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 32, Column 33 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 33, Column 9 | Character: [}] | Class: DELIMITER
-DFA | Line 33, Column 9 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 33, Column 9 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 33, Column 10 | Character: [;] | Class: DELIMITER
-DFA | Line 33, Column 10 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 33, Column 10 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 35, Column 9 | Character: [r] | Class: ALPHA
 DFA | Line 35, Column 9 | q1 --[r]--> q99
 SCAN | Line 35, Column 10 | Character: [e] | Class: ALPHA
@@ -1864,15 +1864,15 @@ SCAN | Line 35, Column 22 | Character: [d] | Class: ALPHA
 DFA | Line 35, Column 22 | q2 --[d]--> q2
 ACCEPT | [orderId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 35, Column 23 | Character: [;] | Class: DELIMITER
-DFA | Line 35, Column 23 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 35, Column 23 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 36, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 36, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 36, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 38, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 38, Column 2 | q1 --[/]--> q324
+DFA | Line 38, Column 2 | q1 --[/]--> q318
 SCAN | Line 38, Column 3 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 38, Column 3 | q324 --[/]--> q14
+DFA | Line 38, Column 3 | q318 --[/]--> q14
 SCAN | Line 38, Column 4 | Character: [P] | Class: COMMENT
 DFA | Line 38, Column 4 | q14 --[P]--> q14
 SCAN | Line 38, Column 5 | Character: [a] | Class: COMMENT
@@ -1954,8 +1954,8 @@ SCAN | Line 39, Column 31 | Character: [y] | Class: ALPHA
 DFA | Line 39, Column 31 | q2 --[y]--> q2
 ACCEPT | [fillOrderPartially] | State: q2 | Token: IDENTIFIER
 SCAN | Line 39, Column 32 | Character: [(] | Class: DELIMITER
-DFA | Line 39, Column 32 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 39, Column 32 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 39, Column 33 | Character: [u] | Class: ALPHA
 DFA | Line 39, Column 33 | q1 --[u]--> q20
 SCAN | Line 39, Column 34 | Character: [i] | Class: ALPHA
@@ -1987,8 +1987,8 @@ SCAN | Line 39, Column 47 | Character: [d] | Class: ALPHA
 DFA | Line 39, Column 47 | q2 --[d]--> q2
 ACCEPT | [orderId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 39, Column 48 | Character: [,] | Class: DELIMITER
-DFA | Line 39, Column 48 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 39, Column 48 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 39, Column 50 | Character: [u] | Class: ALPHA
 DFA | Line 39, Column 50 | q1 --[u]--> q20
 SCAN | Line 39, Column 51 | Character: [i] | Class: ALPHA
@@ -2026,8 +2026,8 @@ SCAN | Line 39, Column 67 | Character: [t] | Class: ALPHA
 DFA | Line 39, Column 67 | q2 --[t]--> q2
 ACCEPT | [fillAmount] | State: q2 | Token: IDENTIFIER
 SCAN | Line 39, Column 68 | Character: [)] | Class: DELIMITER
-DFA | Line 39, Column 68 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 39, Column 68 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 39, Column 70 | Character: [p] | Class: ALPHA
 DFA | Line 39, Column 70 | q1 --[p]--> q186
 SCAN | Line 39, Column 71 | Character: [u] | Class: ALPHA
@@ -2042,8 +2042,8 @@ SCAN | Line 39, Column 75 | Character: [c] | Class: ALPHA
 DFA | Line 39, Column 75 | q196 --[c]--> q197
 ACCEPT | [public] | State: q197 | Token: ACCESS_SPECIFIER
 SCAN | Line 39, Column 77 | Character: [{] | Class: DELIMITER
-DFA | Line 39, Column 77 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 39, Column 77 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 40, Column 9 | Character: [a] | Class: ALPHA
 DFA | Line 40, Column 9 | q1 --[a]--> q58
 SCAN | Line 40, Column 10 | Character: [c] | Class: ALPHA
@@ -2058,8 +2058,8 @@ SCAN | Line 40, Column 14 | Character: [t] | Class: ALPHA
 DFA | Line 40, Column 14 | q234 --[t]--> q235
 ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
 SCAN | Line 40, Column 15 | Character: [(] | Class: DELIMITER
-DFA | Line 40, Column 15 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 40, Column 15 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 40, Column 16 | Character: [o] | Class: ALPHA
 DFA | Line 40, Column 16 | q1 --[o]--> q226
 SCAN | Line 40, Column 17 | Character: [r] | Class: ALPHA
@@ -2076,8 +2076,8 @@ SCAN | Line 40, Column 22 | Character: [d] | Class: ALPHA
 DFA | Line 40, Column 22 | q2 --[d]--> q2
 ACCEPT | [orderId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 40, Column 23 | Character: [,] | Class: DELIMITER
-DFA | Line 40, Column 23 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 40, Column 23 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 40, Column 25 | Character: [p] | Class: ALPHA
 DFA | Line 40, Column 25 | q1 --[p]--> q186
 SCAN | Line 40, Column 26 | Character: [a] | Class: ALPHA
@@ -2094,8 +2094,8 @@ SCAN | Line 40, Column 31 | Character: [l] | Class: ALPHA
 DFA | Line 40, Column 31 | q265 --[l]--> q266
 ACCEPT | [partial] | State: q266 | Token: CONTEXT_KEYWORD
 SCAN | Line 40, Column 32 | Character: [,] | Class: DELIMITER
-DFA | Line 40, Column 32 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 40, Column 32 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 40, Column 34 | Character: [E] | Class: ALPHA
 DFA | Line 40, Column 34 | q1 --[E]--> q2
 SCAN | Line 40, Column 35 | Character: [T] | Class: ALPHA
@@ -2104,8 +2104,8 @@ SCAN | Line 40, Column 36 | Character: [H] | Class: ALPHA
 DFA | Line 40, Column 36 | q2 --[H]--> q2
 ACCEPT | [ETH] | State: q2 | Token: IDENTIFIER
 SCAN | Line 40, Column 37 | Character: [,] | Class: DELIMITER
-DFA | Line 40, Column 37 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 40, Column 37 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 40, Column 39 | Character: [f] | Class: ALPHA
 DFA | Line 40, Column 39 | q1 --[f]--> q131
 SCAN | Line 40, Column 40 | Character: [i] | Class: ALPHA
@@ -2128,18 +2128,18 @@ SCAN | Line 40, Column 48 | Character: [t] | Class: ALPHA
 DFA | Line 40, Column 48 | q2 --[t]--> q2
 ACCEPT | [fillAmount] | State: q2 | Token: IDENTIFIER
 SCAN | Line 40, Column 49 | Character: [)] | Class: DELIMITER
-DFA | Line 40, Column 49 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 40, Column 49 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 40, Column 50 | Character: [;] | Class: DELIMITER
-DFA | Line 40, Column 50 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 40, Column 50 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 41, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 41, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 41, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 43, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 43, Column 2 | q1 --[/]--> q324
+DFA | Line 43, Column 2 | q1 --[/]--> q318
 SCAN | Line 43, Column 3 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 43, Column 3 | q324 --[/]--> q14
+DFA | Line 43, Column 3 | q318 --[/]--> q14
 SCAN | Line 43, Column 4 | Character: [F] | Class: COMMENT
 DFA | Line 43, Column 4 | q14 --[F]--> q14
 SCAN | Line 43, Column 5 | Character: [u] | Class: COMMENT
@@ -2217,8 +2217,8 @@ SCAN | Line 44, Column 32 | Character: [y] | Class: ALPHA
 DFA | Line 44, Column 32 | q2 --[y]--> q2
 ACCEPT | [fillOrderCompletely] | State: q2 | Token: IDENTIFIER
 SCAN | Line 44, Column 33 | Character: [(] | Class: DELIMITER
-DFA | Line 44, Column 33 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 44, Column 33 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 44, Column 34 | Character: [u] | Class: ALPHA
 DFA | Line 44, Column 34 | q1 --[u]--> q20
 SCAN | Line 44, Column 35 | Character: [i] | Class: ALPHA
@@ -2250,8 +2250,8 @@ SCAN | Line 44, Column 48 | Character: [d] | Class: ALPHA
 DFA | Line 44, Column 48 | q2 --[d]--> q2
 ACCEPT | [orderId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 44, Column 49 | Character: [)] | Class: DELIMITER
-DFA | Line 44, Column 49 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 44, Column 49 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 44, Column 51 | Character: [p] | Class: ALPHA
 DFA | Line 44, Column 51 | q1 --[p]--> q186
 SCAN | Line 44, Column 52 | Character: [u] | Class: ALPHA
@@ -2266,8 +2266,8 @@ SCAN | Line 44, Column 56 | Character: [c] | Class: ALPHA
 DFA | Line 44, Column 56 | q196 --[c]--> q197
 ACCEPT | [public] | State: q197 | Token: ACCESS_SPECIFIER
 SCAN | Line 44, Column 58 | Character: [{] | Class: DELIMITER
-DFA | Line 44, Column 58 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 44, Column 58 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 45, Column 9 | Character: [a] | Class: ALPHA
 DFA | Line 45, Column 9 | q1 --[a]--> q58
 SCAN | Line 45, Column 10 | Character: [c] | Class: ALPHA
@@ -2282,8 +2282,8 @@ SCAN | Line 45, Column 14 | Character: [t] | Class: ALPHA
 DFA | Line 45, Column 14 | q234 --[t]--> q235
 ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
 SCAN | Line 45, Column 15 | Character: [(] | Class: DELIMITER
-DFA | Line 45, Column 15 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 45, Column 15 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 45, Column 16 | Character: [o] | Class: ALPHA
 DFA | Line 45, Column 16 | q1 --[o]--> q226
 SCAN | Line 45, Column 17 | Character: [r] | Class: ALPHA
@@ -2300,18 +2300,18 @@ SCAN | Line 45, Column 22 | Character: [d] | Class: ALPHA
 DFA | Line 45, Column 22 | q2 --[d]--> q2
 ACCEPT | [orderId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 45, Column 23 | Character: [)] | Class: DELIMITER
-DFA | Line 45, Column 23 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 45, Column 23 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 45, Column 24 | Character: [;] | Class: DELIMITER
-DFA | Line 45, Column 24 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 45, Column 24 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 46, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 46, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 46, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 48, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 48, Column 2 | q1 --[/]--> q324
+DFA | Line 48, Column 2 | q1 --[/]--> q318
 SCAN | Line 48, Column 3 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 48, Column 3 | q324 --[/]--> q14
+DFA | Line 48, Column 3 | q318 --[/]--> q14
 SCAN | Line 48, Column 4 | Character: [C] | Class: COMMENT
 DFA | Line 48, Column 4 | q14 --[C]--> q14
 SCAN | Line 48, Column 5 | Character: [a] | Class: COMMENT
@@ -2389,8 +2389,8 @@ SCAN | Line 49, Column 30 | Character: [e] | Class: ALPHA
 DFA | Line 49, Column 30 | q2 --[e]--> q2
 ACCEPT | [cancelActiveTrade] | State: q2 | Token: IDENTIFIER
 SCAN | Line 49, Column 31 | Character: [(] | Class: DELIMITER
-DFA | Line 49, Column 31 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 49, Column 31 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 49, Column 32 | Character: [u] | Class: ALPHA
 DFA | Line 49, Column 32 | q1 --[u]--> q20
 SCAN | Line 49, Column 33 | Character: [i] | Class: ALPHA
@@ -2422,8 +2422,8 @@ SCAN | Line 49, Column 46 | Character: [d] | Class: ALPHA
 DFA | Line 49, Column 46 | q2 --[d]--> q2
 ACCEPT | [tradeId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 49, Column 47 | Character: [)] | Class: DELIMITER
-DFA | Line 49, Column 47 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 49, Column 47 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 49, Column 49 | Character: [p] | Class: ALPHA
 DFA | Line 49, Column 49 | q1 --[p]--> q186
 SCAN | Line 49, Column 50 | Character: [u] | Class: ALPHA
@@ -2438,8 +2438,8 @@ SCAN | Line 49, Column 54 | Character: [c] | Class: ALPHA
 DFA | Line 49, Column 54 | q196 --[c]--> q197
 ACCEPT | [public] | State: q197 | Token: ACCESS_SPECIFIER
 SCAN | Line 49, Column 56 | Character: [{] | Class: DELIMITER
-DFA | Line 49, Column 56 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 49, Column 56 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 50, Column 9 | Character: [c] | Class: ALPHA
 DFA | Line 50, Column 9 | q1 --[c]--> q105
 SCAN | Line 50, Column 10 | Character: [a] | Class: ALPHA
@@ -2454,8 +2454,8 @@ SCAN | Line 50, Column 14 | Character: [l] | Class: ALPHA
 DFA | Line 50, Column 14 | q260 --[l]--> q261
 ACCEPT | [cancel] | State: q261 | Token: TRADINGFUNC
 SCAN | Line 50, Column 15 | Character: [(] | Class: DELIMITER
-DFA | Line 50, Column 15 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 50, Column 15 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 50, Column 16 | Character: [t] | Class: ALPHA
 DFA | Line 50, Column 16 | q1 --[t]--> q251
 SCAN | Line 50, Column 17 | Character: [r] | Class: ALPHA
@@ -2472,18 +2472,18 @@ SCAN | Line 50, Column 22 | Character: [d] | Class: ALPHA
 DFA | Line 50, Column 22 | q2 --[d]--> q2
 ACCEPT | [tradeId] | State: q2 | Token: IDENTIFIER
 SCAN | Line 50, Column 23 | Character: [)] | Class: DELIMITER
-DFA | Line 50, Column 23 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 50, Column 23 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 50, Column 24 | Character: [;] | Class: DELIMITER
-DFA | Line 50, Column 24 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 50, Column 24 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 51, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 51, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 51, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 54, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 54, Column 2 | q1 --[/]--> q324
+DFA | Line 54, Column 2 | q1 --[/]--> q318
 SCAN | Line 54, Column 3 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 54, Column 3 | q324 --[/]--> q14
+DFA | Line 54, Column 3 | q318 --[/]--> q14
 SCAN | Line 54, Column 4 | Character: [B] | Class: COMMENT
 DFA | Line 54, Column 4 | q14 --[B]--> q14
 SCAN | Line 54, Column 5 | Character: [a] | Class: COMMENT
@@ -2575,8 +2575,8 @@ SCAN | Line 55, Column 35 | Character: [e] | Class: ALPHA
 DFA | Line 55, Column 35 | q2 --[e]--> q2
 ACCEPT | [executeAtomicArbitrage] | State: q2 | Token: IDENTIFIER
 SCAN | Line 55, Column 36 | Character: [(] | Class: DELIMITER
-DFA | Line 55, Column 36 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 55, Column 36 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 55, Column 37 | Character: [u] | Class: ALPHA
 DFA | Line 55, Column 37 | q1 --[u]--> q20
 SCAN | Line 55, Column 38 | Character: [i] | Class: ALPHA
@@ -2606,8 +2606,8 @@ SCAN | Line 55, Column 50 | Character: [A] | Class: ALPHA
 DFA | Line 55, Column 50 | q230 --[A]--> q2
 ACCEPT | [offerA] | State: q2 | Token: IDENTIFIER
 SCAN | Line 55, Column 51 | Character: [,] | Class: DELIMITER
-DFA | Line 55, Column 51 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 55, Column 51 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 55, Column 53 | Character: [u] | Class: ALPHA
 DFA | Line 55, Column 53 | q1 --[u]--> q20
 SCAN | Line 55, Column 54 | Character: [i] | Class: ALPHA
@@ -2637,8 +2637,8 @@ SCAN | Line 55, Column 66 | Character: [B] | Class: ALPHA
 DFA | Line 55, Column 66 | q230 --[B]--> q2
 ACCEPT | [offerB] | State: q2 | Token: IDENTIFIER
 SCAN | Line 55, Column 67 | Character: [,] | Class: DELIMITER
-DFA | Line 55, Column 67 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 55, Column 67 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 55, Column 69 | Character: [u] | Class: ALPHA
 DFA | Line 55, Column 69 | q1 --[u]--> q20
 SCAN | Line 55, Column 70 | Character: [i] | Class: ALPHA
@@ -2666,8 +2666,8 @@ SCAN | Line 55, Column 81 | Character: [C] | Class: ALPHA
 DFA | Line 55, Column 81 | q242 --[C]--> q2
 ACCEPT | [swapC] | State: q2 | Token: IDENTIFIER
 SCAN | Line 55, Column 82 | Character: [)] | Class: DELIMITER
-DFA | Line 55, Column 82 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 55, Column 82 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 55, Column 84 | Character: [p] | Class: ALPHA
 DFA | Line 55, Column 84 | q1 --[p]--> q186
 SCAN | Line 55, Column 85 | Character: [u] | Class: ALPHA
@@ -2682,8 +2682,8 @@ SCAN | Line 55, Column 89 | Character: [c] | Class: ALPHA
 DFA | Line 55, Column 89 | q196 --[c]--> q197
 ACCEPT | [public] | State: q197 | Token: ACCESS_SPECIFIER
 SCAN | Line 55, Column 91 | Character: [{] | Class: DELIMITER
-DFA | Line 55, Column 91 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 55, Column 91 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 56, Column 9 | Character: [b] | Class: ALPHA
 DFA | Line 56, Column 9 | q1 --[b]--> q51
 SCAN | Line 56, Column 10 | Character: [a] | Class: ALPHA
@@ -2717,8 +2717,8 @@ SCAN | Line 56, Column 24 | Character: [t] | Class: ALPHA
 DFA | Line 56, Column 24 | q2 --[t]--> q2
 ACCEPT | [settlement] | State: q2 | Token: IDENTIFIER
 SCAN | Line 56, Column 26 | Character: [{] | Class: DELIMITER
-DFA | Line 56, Column 26 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 56, Column 26 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 57, Column 13 | Character: [t] | Class: ALPHA
 DFA | Line 57, Column 13 | q1 --[t]--> q251
 SCAN | Line 57, Column 14 | Character: [i] | Class: ALPHA
@@ -2735,8 +2735,8 @@ SCAN | Line 57, Column 19 | Character: [t] | Class: ALPHA
 DFA | Line 57, Column 19 | q256 --[t]--> q257
 ACCEPT | [timeout] | State: q257 | Token: TRADINGFUNC
 SCAN | Line 57, Column 20 | Character: [(] | Class: DELIMITER
-DFA | Line 57, Column 20 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 57, Column 20 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 57, Column 21 | Character: [4] | Class: DIGIT
 DFA | Line 57, Column 21 | q1 --[4]--> q3
 SCAN | Line 57, Column 22 | Character: [5] | Class: DIGIT
@@ -2745,11 +2745,11 @@ SCAN | Line 57, Column 23 | Character: [s] | Class: ALPHA
 DFA | Line 57, Column 23 | q3 --[s]--> q8
 ACCEPT | [45s] | State: q8 | Token: DURATION
 SCAN | Line 57, Column 24 | Character: [)] | Class: DELIMITER
-DFA | Line 57, Column 24 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 57, Column 24 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 57, Column 25 | Character: [;] | Class: DELIMITER
-DFA | Line 57, Column 25 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 57, Column 25 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 58, Column 13 | Character: [a] | Class: ALPHA
 DFA | Line 58, Column 13 | q1 --[a]--> q58
 SCAN | Line 58, Column 14 | Character: [c] | Class: ALPHA
@@ -2764,8 +2764,8 @@ SCAN | Line 58, Column 18 | Character: [t] | Class: ALPHA
 DFA | Line 58, Column 18 | q234 --[t]--> q235
 ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
 SCAN | Line 58, Column 19 | Character: [(] | Class: DELIMITER
-DFA | Line 58, Column 19 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 58, Column 19 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 58, Column 20 | Character: [o] | Class: ALPHA
 DFA | Line 58, Column 20 | q1 --[o]--> q226
 SCAN | Line 58, Column 21 | Character: [f] | Class: ALPHA
@@ -2780,11 +2780,11 @@ SCAN | Line 58, Column 25 | Character: [A] | Class: ALPHA
 DFA | Line 58, Column 25 | q230 --[A]--> q2
 ACCEPT | [offerA] | State: q2 | Token: IDENTIFIER
 SCAN | Line 58, Column 26 | Character: [)] | Class: DELIMITER
-DFA | Line 58, Column 26 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 58, Column 26 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 58, Column 27 | Character: [;] | Class: DELIMITER
-DFA | Line 58, Column 27 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 58, Column 27 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 59, Column 13 | Character: [a] | Class: ALPHA
 DFA | Line 59, Column 13 | q1 --[a]--> q58
 SCAN | Line 59, Column 14 | Character: [c] | Class: ALPHA
@@ -2799,8 +2799,8 @@ SCAN | Line 59, Column 18 | Character: [t] | Class: ALPHA
 DFA | Line 59, Column 18 | q234 --[t]--> q235
 ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
 SCAN | Line 59, Column 19 | Character: [(] | Class: DELIMITER
-DFA | Line 59, Column 19 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 59, Column 19 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 59, Column 20 | Character: [o] | Class: ALPHA
 DFA | Line 59, Column 20 | q1 --[o]--> q226
 SCAN | Line 59, Column 21 | Character: [f] | Class: ALPHA
@@ -2815,11 +2815,11 @@ SCAN | Line 59, Column 25 | Character: [B] | Class: ALPHA
 DFA | Line 59, Column 25 | q230 --[B]--> q2
 ACCEPT | [offerB] | State: q2 | Token: IDENTIFIER
 SCAN | Line 59, Column 26 | Character: [)] | Class: DELIMITER
-DFA | Line 59, Column 26 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 59, Column 26 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 59, Column 27 | Character: [;] | Class: DELIMITER
-DFA | Line 59, Column 27 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 59, Column 27 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 60, Column 13 | Character: [a] | Class: ALPHA
 DFA | Line 60, Column 13 | q1 --[a]--> q58
 SCAN | Line 60, Column 14 | Character: [c] | Class: ALPHA
@@ -2834,8 +2834,8 @@ SCAN | Line 60, Column 18 | Character: [t] | Class: ALPHA
 DFA | Line 60, Column 18 | q234 --[t]--> q235
 ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
 SCAN | Line 60, Column 19 | Character: [(] | Class: DELIMITER
-DFA | Line 60, Column 19 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 60, Column 19 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 60, Column 20 | Character: [s] | Class: ALPHA
 DFA | Line 60, Column 20 | q1 --[s]--> q65
 SCAN | Line 60, Column 21 | Character: [w] | Class: ALPHA
@@ -2848,21 +2848,21 @@ SCAN | Line 60, Column 24 | Character: [C] | Class: ALPHA
 DFA | Line 60, Column 24 | q242 --[C]--> q2
 ACCEPT | [swapC] | State: q2 | Token: IDENTIFIER
 SCAN | Line 60, Column 25 | Character: [)] | Class: DELIMITER
-DFA | Line 60, Column 25 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 60, Column 25 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 60, Column 26 | Character: [;] | Class: DELIMITER
-DFA | Line 60, Column 26 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 60, Column 26 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 61, Column 9 | Character: [}] | Class: DELIMITER
-DFA | Line 61, Column 9 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 61, Column 9 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 62, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 62, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 62, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 64, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 64, Column 2 | q1 --[/]--> q324
+DFA | Line 64, Column 2 | q1 --[/]--> q318
 SCAN | Line 64, Column 3 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 64, Column 3 | q324 --[/]--> q14
+DFA | Line 64, Column 3 | q318 --[/]--> q14
 SCAN | Line 64, Column 4 | Character: [C] | Class: COMMENT
 DFA | Line 64, Column 4 | q14 --[C]--> q14
 SCAN | Line 64, Column 5 | Character: [l] | Class: COMMENT
@@ -2950,11 +2950,11 @@ SCAN | Line 65, Column 35 | Character: [d] | Class: ALPHA
 DFA | Line 65, Column 35 | q2 --[d]--> q2
 ACCEPT | [claimFailedTradeRefund] | State: q2 | Token: IDENTIFIER
 SCAN | Line 65, Column 36 | Character: [(] | Class: DELIMITER
-DFA | Line 65, Column 36 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 65, Column 36 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 65, Column 37 | Character: [)] | Class: DELIMITER
-DFA | Line 65, Column 37 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 65, Column 37 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 65, Column 39 | Character: [p] | Class: ALPHA
 DFA | Line 65, Column 39 | q1 --[p]--> q186
 SCAN | Line 65, Column 40 | Character: [u] | Class: ALPHA
@@ -2969,8 +2969,8 @@ SCAN | Line 65, Column 44 | Character: [c] | Class: ALPHA
 DFA | Line 65, Column 44 | q196 --[c]--> q197
 ACCEPT | [public] | State: q197 | Token: ACCESS_SPECIFIER
 SCAN | Line 65, Column 46 | Character: [{] | Class: DELIMITER
-DFA | Line 65, Column 46 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 65, Column 46 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 66, Column 9 | Character: [a] | Class: ALPHA
 DFA | Line 66, Column 9 | q1 --[a]--> q58
 SCAN | Line 66, Column 10 | Character: [c] | Class: ALPHA
@@ -2985,8 +2985,8 @@ SCAN | Line 66, Column 14 | Character: [t] | Class: ALPHA
 DFA | Line 66, Column 14 | q234 --[t]--> q235
 ACCEPT | [accept] | State: q235 | Token: TRADINGFUNC
 SCAN | Line 66, Column 15 | Character: [(] | Class: DELIMITER
-DFA | Line 66, Column 15 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 66, Column 15 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 66, Column 16 | Character: [r] | Class: ALPHA
 DFA | Line 66, Column 16 | q1 --[r]--> q99
 SCAN | Line 66, Column 17 | Character: [e] | Class: ALPHA
@@ -3001,18 +3001,18 @@ SCAN | Line 66, Column 21 | Character: [d] | Class: ALPHA
 DFA | Line 66, Column 21 | q249 --[d]--> q250
 ACCEPT | [refund] | State: q250 | Token: TRADINGFUNC
 SCAN | Line 66, Column 22 | Character: [)] | Class: DELIMITER
-DFA | Line 66, Column 22 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 66, Column 22 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 66, Column 23 | Character: [;] | Class: DELIMITER
-DFA | Line 66, Column 23 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 66, Column 23 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 67, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 67, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 67, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 69, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 69, Column 2 | q1 --[/]--> q324
+DFA | Line 69, Column 2 | q1 --[/]--> q318
 SCAN | Line 69, Column 3 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 69, Column 3 | q324 --[/]--> q14
+DFA | Line 69, Column 3 | q318 --[/]--> q14
 SCAN | Line 69, Column 4 | Character: [C] | Class: COMMENT
 DFA | Line 69, Column 4 | q14 --[C]--> q14
 SCAN | Line 69, Column 5 | Character: [h] | Class: COMMENT
@@ -3098,8 +3098,8 @@ SCAN | Line 70, Column 32 | Character: [e] | Class: ALPHA
 DFA | Line 70, Column 32 | q2 --[e]--> q2
 ACCEPT | [checkVaultExistence] | State: q2 | Token: IDENTIFIER
 SCAN | Line 70, Column 33 | Character: [(] | Class: DELIMITER
-DFA | Line 70, Column 33 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 70, Column 33 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 70, Column 34 | Character: [a] | Class: ALPHA
 DFA | Line 70, Column 34 | q1 --[a]--> q58
 SCAN | Line 70, Column 35 | Character: [d] | Class: ALPHA
@@ -3129,8 +3129,8 @@ SCAN | Line 70, Column 47 | Character: [r] | Class: ALPHA
 DFA | Line 70, Column 47 | q2 --[r]--> q2
 ACCEPT | [trader] | State: q2 | Token: IDENTIFIER
 SCAN | Line 70, Column 48 | Character: [)] | Class: DELIMITER
-DFA | Line 70, Column 48 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 70, Column 48 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 70, Column 50 | Character: [p] | Class: ALPHA
 DFA | Line 70, Column 50 | q1 --[p]--> q186
 SCAN | Line 70, Column 51 | Character: [u] | Class: ALPHA
@@ -3154,16 +3154,16 @@ SCAN | Line 70, Column 60 | Character: [w] | Class: ALPHA
 DFA | Line 70, Column 60 | q201 --[w]--> q202
 ACCEPT | [view] | State: q202 | Token: MUTABILITY
 SCAN | Line 70, Column 62 | Character: [{] | Class: DELIMITER
-DFA | Line 70, Column 62 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 70, Column 62 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 71, Column 9 | Character: [i] | Class: ALPHA
 DFA | Line 71, Column 9 | q1 --[i]--> q36
 SCAN | Line 71, Column 10 | Character: [f] | Class: ALPHA
 DFA | Line 71, Column 10 | q36 --[f]--> q127
 ACCEPT | [if] | State: q127 | Token: KEYWORD
 SCAN | Line 71, Column 12 | Character: [(] | Class: DELIMITER
-DFA | Line 71, Column 12 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 71, Column 12 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 71, Column 13 | Character: [u] | Class: ALPHA
 DFA | Line 71, Column 13 | q1 --[u]--> q20
 SCAN | Line 71, Column 14 | Character: [s] | Class: ALPHA
@@ -3186,8 +3186,8 @@ SCAN | Line 71, Column 22 | Character: [s] | Class: ALPHA
 DFA | Line 71, Column 22 | q2 --[s]--> q2
 ACCEPT | [userVaults] | State: q2 | Token: IDENTIFIER
 SCAN | Line 71, Column 23 | Character: [.] | Class: DELIMITER
-DFA | Line 71, Column 23 | q1 --[.]--> q350
-ACCEPT | [.] | State: q350 | Token: DOT
+DFA | Line 71, Column 23 | q1 --[.]--> q346
+ACCEPT | [.] | State: q346 | Token: DOT
 SCAN | Line 71, Column 24 | Character: [h] | Class: ALPHA
 DFA | Line 71, Column 24 | q1 --[h]--> q2
 SCAN | Line 71, Column 25 | Character: [a] | Class: ALPHA
@@ -3196,8 +3196,8 @@ SCAN | Line 71, Column 26 | Character: [s] | Class: ALPHA
 DFA | Line 71, Column 26 | q2 --[s]--> q2
 ACCEPT | [has] | State: q2 | Token: IDENTIFIER
 SCAN | Line 71, Column 27 | Character: [(] | Class: DELIMITER
-DFA | Line 71, Column 27 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 71, Column 27 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 71, Column 28 | Character: [t] | Class: ALPHA
 DFA | Line 71, Column 28 | q1 --[t]--> q251
 SCAN | Line 71, Column 29 | Character: [r] | Class: ALPHA
@@ -3212,14 +3212,14 @@ SCAN | Line 71, Column 33 | Character: [r] | Class: ALPHA
 DFA | Line 71, Column 33 | q2 --[r]--> q2
 ACCEPT | [trader] | State: q2 | Token: IDENTIFIER
 SCAN | Line 71, Column 34 | Character: [)] | Class: DELIMITER
-DFA | Line 71, Column 34 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 71, Column 34 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 71, Column 35 | Character: [)] | Class: DELIMITER
-DFA | Line 71, Column 35 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 71, Column 35 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 71, Column 37 | Character: [{] | Class: DELIMITER
-DFA | Line 71, Column 37 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 71, Column 37 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 72, Column 13 | Character: [r] | Class: ALPHA
 DFA | Line 72, Column 13 | q1 --[r]--> q99
 SCAN | Line 72, Column 14 | Character: [e] | Class: ALPHA
@@ -3243,11 +3243,11 @@ SCAN | Line 72, Column 23 | Character: [e] | Class: ALPHA
 DFA | Line 72, Column 23 | q306 --[e]--> q307
 ACCEPT | [true] | State: q307 | Token: BOOL_LITERAL
 SCAN | Line 72, Column 24 | Character: [;] | Class: DELIMITER
-DFA | Line 72, Column 24 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 72, Column 24 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 73, Column 9 | Character: [}] | Class: DELIMITER
-DFA | Line 73, Column 9 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 73, Column 9 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 74, Column 9 | Character: [r] | Class: ALPHA
 DFA | Line 74, Column 9 | q1 --[r]--> q99
 SCAN | Line 74, Column 10 | Character: [e] | Class: ALPHA
@@ -3273,15 +3273,15 @@ SCAN | Line 74, Column 20 | Character: [e] | Class: ALPHA
 DFA | Line 74, Column 20 | q310 --[e]--> q311
 ACCEPT | [false] | State: q311 | Token: BOOL_LITERAL
 SCAN | Line 74, Column 21 | Character: [;] | Class: DELIMITER
-DFA | Line 74, Column 21 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 74, Column 21 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 75, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 75, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 75, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
 SCAN | Line 77, Column 2 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 77, Column 2 | q1 --[/]--> q324
+DFA | Line 77, Column 2 | q1 --[/]--> q318
 SCAN | Line 77, Column 3 | Character: [/] | Class: COMMENT_MARKER
-DFA | Line 77, Column 3 | q324 --[/]--> q14
+DFA | Line 77, Column 3 | q318 --[/]--> q14
 SCAN | Line 77, Column 4 | Character: [G] | Class: COMMENT
 DFA | Line 77, Column 4 | q14 --[G]--> q14
 SCAN | Line 77, Column 5 | Character: [e] | Class: COMMENT
@@ -3343,8 +3343,8 @@ SCAN | Line 78, Column 26 | Character: [e] | Class: ALPHA
 DFA | Line 78, Column 26 | q2 --[e]--> q2
 ACCEPT | [getTraderPage] | State: q2 | Token: IDENTIFIER
 SCAN | Line 78, Column 27 | Character: [(] | Class: DELIMITER
-DFA | Line 78, Column 27 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 78, Column 27 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 78, Column 28 | Character: [u] | Class: ALPHA
 DFA | Line 78, Column 28 | q1 --[u]--> q20
 SCAN | Line 78, Column 29 | Character: [i] | Class: ALPHA
@@ -3374,8 +3374,8 @@ SCAN | Line 78, Column 41 | Character: [r] | Class: ALPHA
 DFA | Line 78, Column 41 | q2 --[r]--> q2
 ACCEPT | [cursor] | State: q2 | Token: IDENTIFIER
 SCAN | Line 78, Column 42 | Character: [)] | Class: DELIMITER
-DFA | Line 78, Column 42 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 78, Column 42 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 78, Column 44 | Character: [p] | Class: ALPHA
 DFA | Line 78, Column 44 | q1 --[p]--> q186
 SCAN | Line 78, Column 45 | Character: [u] | Class: ALPHA
@@ -3399,8 +3399,8 @@ SCAN | Line 78, Column 54 | Character: [w] | Class: ALPHA
 DFA | Line 78, Column 54 | q201 --[w]--> q202
 ACCEPT | [view] | State: q202 | Token: MUTABILITY
 SCAN | Line 78, Column 56 | Character: [{] | Class: DELIMITER
-DFA | Line 78, Column 56 | q1 --[{]--> q354
-ACCEPT | [{] | State: q354 | Token: LBRACE
+DFA | Line 78, Column 56 | q1 --[{]--> q350
+ACCEPT | [{] | State: q350 | Token: LBRACE
 SCAN | Line 79, Column 9 | Character: [r] | Class: ALPHA
 DFA | Line 79, Column 9 | q1 --[r]--> q99
 SCAN | Line 79, Column 10 | Character: [e] | Class: ALPHA
@@ -3437,8 +3437,8 @@ SCAN | Line 79, Column 25 | Character: [s] | Class: ALPHA
 DFA | Line 79, Column 25 | q2 --[s]--> q2
 ACCEPT | [registeredTraders] | State: q2 | Token: IDENTIFIER
 SCAN | Line 79, Column 26 | Character: [.] | Class: DELIMITER
-DFA | Line 79, Column 26 | q1 --[.]--> q350
-ACCEPT | [.] | State: q350 | Token: DOT
+DFA | Line 79, Column 26 | q1 --[.]--> q346
+ACCEPT | [.] | State: q346 | Token: DOT
 SCAN | Line 79, Column 27 | Character: [p] | Class: ALPHA
 DFA | Line 79, Column 27 | q1 --[p]--> q186
 SCAN | Line 79, Column 28 | Character: [a] | Class: ALPHA
@@ -3449,8 +3449,8 @@ SCAN | Line 79, Column 30 | Character: [e] | Class: ALPHA
 DFA | Line 79, Column 30 | q2 --[e]--> q2
 ACCEPT | [page] | State: q2 | Token: IDENTIFIER
 SCAN | Line 79, Column 31 | Character: [(] | Class: DELIMITER
-DFA | Line 79, Column 31 | q1 --[(]--> q352
-ACCEPT | [(] | State: q352 | Token: LPAREN
+DFA | Line 79, Column 31 | q1 --[(]--> q348
+ACCEPT | [(] | State: q348 | Token: LPAREN
 SCAN | Line 79, Column 32 | Character: [c] | Class: ALPHA
 DFA | Line 79, Column 32 | q1 --[c]--> q105
 SCAN | Line 79, Column 33 | Character: [u] | Class: ALPHA
@@ -3465,19 +3465,19 @@ SCAN | Line 79, Column 37 | Character: [r] | Class: ALPHA
 DFA | Line 79, Column 37 | q2 --[r]--> q2
 ACCEPT | [cursor] | State: q2 | Token: IDENTIFIER
 SCAN | Line 79, Column 38 | Character: [,] | Class: DELIMITER
-DFA | Line 79, Column 38 | q1 --[,]--> q349
-ACCEPT | [,] | State: q349 | Token: COMMA
+DFA | Line 79, Column 38 | q1 --[,]--> q345
+ACCEPT | [,] | State: q345 | Token: COMMA
 SCAN | Line 79, Column 40 | Character: [5] | Class: DIGIT
 DFA | Line 79, Column 40 | q1 --[5]--> q3
 SCAN | Line 79, Column 41 | Character: [0] | Class: DIGIT
 DFA | Line 79, Column 41 | q3 --[0]--> q3
 ACCEPT | [50] | State: q3 | Token: INTEGER
 SCAN | Line 79, Column 42 | Character: [)] | Class: DELIMITER
-DFA | Line 79, Column 42 | q1 --[)]--> q353
-ACCEPT | [)] | State: q353 | Token: RPAREN
+DFA | Line 79, Column 42 | q1 --[)]--> q349
+ACCEPT | [)] | State: q349 | Token: RPAREN
 SCAN | Line 79, Column 43 | Character: [;] | Class: DELIMITER
-DFA | Line 79, Column 43 | q1 --[;]--> q348
-ACCEPT | [;] | State: q348 | Token: SEMICOLON
+DFA | Line 79, Column 43 | q1 --[;]--> q344
+ACCEPT | [;] | State: q344 | Token: SEMICOLON
 SCAN | Line 80, Column 5 | Character: [}] | Class: DELIMITER
-DFA | Line 80, Column 5 | q1 --[}]--> q355
-ACCEPT | [}] | State: q355 | Token: RBRACE
+DFA | Line 80, Column 5 | q1 --[}]--> q351
+ACCEPT | [}] | State: q351 | Token: RBRACE
