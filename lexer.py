@@ -34,19 +34,40 @@ _add("DATA_TYPE",
      "int int8 int16 int32 int64 int128 int256 "
      "bool boolean address string str bytes asset enum struct "
      "mapping ledger roster")
-# "copy" is not in the spec's keyword table but is used in its examples.
+
 _add("KEYWORD",
      "contract constructor construct def define if else for while return "
-     "import new event error emit require void copy")
-_add("ACCESS_SPECIFIER", "external internal private public")
-_add("MUTABILITY", "pure view payable")
-_add("DATA_LOCATION", "storage memory calldata")
-_add("BUILTIN", "offer accept order swap batch refund timeout cancel")
-_add("CONTEXT_KEYWORD", "partial buy gascontext bytecodecontext")
-_add("GLOBAL", "msg block sender value")
-_add("BOOL_LITERAL", "true false")
+     "import new event error emit require void copy revert indexed")
 
-# Longest match first: 2-char operators, then 1-char operators.
+_add("ACCESS_SPECIFIER",
+     "external internal private public")
+
+_add("MUTABILITY",
+     "pure view payable")
+
+_add("DATA_LOCATION",
+     "storage memory calldata")
+
+_add("TRADINGFUNC",
+     "offer accept order swap batch refund timeout cancel")
+
+_add("ASSET_BINDER", "erc20")
+
+_add("CONTEXT_KEYWORD",
+     "partial buy gascontext bytecodecontext")
+
+# partial / buy are only keywords in their valid position (see tokenize()).
+CONTEXTUAL = {"partial", "buy"}
+
+_add("GLOBAL",
+     "msg block sender value")
+
+_add("BOOL_LITERAL",
+     "true false")
+
+# Longest match first: 3-char, then 2-char, then 1-char operators.
+OPS3 = {}
+
 OPS2 = {
     "+=": "ASSIGN_OP", "-=": "ASSIGN_OP", "*=": "ASSIGN_OP", "/=": "ASSIGN_OP",
     "%=": "ASSIGN_OP", "~=": "ASSIGN_OP", "&=": "ASSIGN_OP", "|=": "ASSIGN_OP",
@@ -69,12 +90,15 @@ OPS1 = {
     ";": "SEMICOLON", ",": "COMMA", ".": "DOT", ":": "COLON",
     "(": "LPAREN", ")": "RPAREN",
     "{": "LBRACE", "}": "RBRACE",
-    "[": "LBRACKET", "]": "RBRACKET",
+    "[": "LBRACKET", "]": "RBRACKET"
 }
 
 ALPHA = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 DIGITS = set("0123456789")
 HEXDIGITS = DIGITS | set("abcdefABCDEF")
+UPPER = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+SCHAR = set("+-=*/%|~^_;:.,[]{}()!\"'<>&\\?")
+STRING_BASE = ALPHA | DIGITS | SCHAR | {"?"}
 WHITESPACE = set(" \t\r\n\f\v")
 
 
@@ -92,7 +116,6 @@ class LexError:
     line: int
     col: int
     message: str
-
 
 
 # --------------------------------------------------------------------------
@@ -127,7 +150,7 @@ TRANSITION = {}   # (state, char) -> state, for the keyword + operator tries
 
 def _build_tries():
     nxt = FIRST_TRIE_STATE
-    words = list(KEYWORDS) + list(OPS2) + list(OPS1)
+    words = list(KEYWORDS) + list(OPS3) + list(OPS2) + list(OPS1)
     for w in words:
         state = START
         for ch in w:
@@ -142,6 +165,27 @@ _build_tries()
 # --------------------------------------------------------------------------
 # Scanner
 # --------------------------------------------------------------------------
+
+
+def _is_partial_position(tokens):
+    """True if the next word is the 2nd argument of accept( ... )."""
+    if not tokens or tokens[-1].lexeme != ",":
+        return False
+    depth = commas = 0
+    for k in range(len(tokens) - 1, -1, -1):
+        lx = tokens[k].lexeme
+        if lx == ")":
+            depth += 1
+        elif lx == "(":
+            if depth == 0:
+                return (k > 0 and tokens[k - 1].lexeme == "accept"
+                        and tokens[k - 1].type == "TRADINGFUNC"
+                        and commas == 1)
+            depth -= 1
+        elif lx == "," and depth == 0:
+            commas += 1
+    return False
+
 
 def tokenize(src):
     """Return (tokens, errors) for the source text."""
@@ -208,7 +252,15 @@ def tokenize(src):
         if c in ALPHA:
             j = word_end(i)
             word = src[i:j]
-            emit(KEYWORDS.get(word, "IDENTIFIER"), i, j, "word")
+            tok_type = KEYWORDS.get(word, "IDENTIFIER")
+            if word in CONTEXTUAL:
+                if word == "buy":
+                    valid = bool(tokens) and tokens[-1].lexeme == "order" \
+                        and tokens[-1].type == "TRADINGFUNC"
+                else:  # partial
+                    valid = _is_partial_position(tokens)
+                tok_type = "CONTEXT_KEYWORD" if valid else "IDENTIFIER"
+            emit(tok_type, i, j, "word")
             i = j
             continue
 
@@ -250,16 +302,16 @@ def tokenize(src):
                 i = j + 1
                 continue
 
-            # AssetLiteral: (Integer | Decimal) AssetSymbol, same line,
-            # separated by spaces/tabs (e.g. "0.05 USDC"); symbol is letters
-            # only and not a reserved word.
+            # AssetLiteral: (Integer | Decimal) <space> AssetSymbol. At least one
+            # space/tab is required between them (0.05 USDC valid, 5ETH is not);
+            # AssetSymbol = Upper+.
             k = j
             while k < n and src[k] in " \t":
                 k += 1
             m = k
-            while m < n and src[m] in ALPHA:
+            while m < n and src[m] in UPPER:
                 m += 1
-            if k > j and m > k and boundary(m) and src[k:m] not in KEYWORDS:
+            if k > j and m > k and boundary(m):
                 emit("ASSET_LITERAL", i, m, "number")
                 i = m
                 continue
@@ -277,30 +329,41 @@ def tokenize(src):
                 i = j
             continue
 
-        # ---- string literal (double or single quoted) ---------------------
+        # ---- string literal ('...' or "...") ----------------------------
         if c == '"' or c == "'":
-            q = c                      # the quote that opened this string
+            quote = c
+            allowed = STRING_BASE - {quote, "\\"}
             j = i + 1
-            bad_escape = None
+            bad_escape = bad_char = None
             closed = False
             while j < n and src[j] != "\n":
-                if src[j] == q:
+                ch = src[j]
+                if ch == quote:
                     closed = True
                     break
-                if src[j] == "\\":
+                if ch == "\\":
                     nxt = src[j + 1] if j + 1 < n else ""
-                    if nxt not in (q, "\\", "n"):
+                    if nxt in (quote, "\\", "n") and nxt != "":
+                        j += 2
+                        continue
+                    if bad_escape is None:
                         bad_escape = j
-                    j += 2
-                else:
-                    j += 1
+                    j += 1 if nxt in ("", "\n") else 2
+                    continue
+                if ch not in allowed and bad_char is None:
+                    bad_char = j
+                j += 1
             j = min(j, n)
             if not closed:
                 error(i, j, "unterminated string literal", "string")
                 i = j
             elif bad_escape is not None:
                 error(i, j + 1, f"invalid escape sequence in string "
-                                f"(allowed: \\{q} \\\\ \\n)", "string")
+                                f"(allowed: \\{quote} \\\\ \\n)", "string")
+                i = j + 1
+            elif bad_char is not None:
+                error(i, j + 1, "character not allowed in string literal",
+                      "string")
                 i = j + 1
             else:
                 emit("STRING_LITERAL", i, j + 1, "string")
@@ -308,8 +371,11 @@ def tokenize(src):
             continue
 
         # ---- operators and delimiters (longest match) ---------------------
-        two = src[i:i + 2]
-        if two in OPS2:
+        three, two = src[i:i + 3], src[i:i + 2]
+        if three in OPS3:
+            emit(OPS3[three], i, i + 3, "op")
+            i += 3
+        elif two in OPS2:
             emit(OPS2[two], i, i + 2, "op")
             i += 2
         elif c in OPS1:
@@ -352,21 +418,23 @@ def _num_step(state, ch, prefix):
     if state == ASSET_SP:
         if ch in " \t":
             return ASSET_SP
-        if ch in ALPHA:
+        if ch in UPPER:
             return ASSET_SYM
-    if state == ASSET_SYM and ch in ALPHA:
+    if state == ASSET_SYM and ch in UPPER:
         return ASSET_SYM
     return ERR
 
 
 def _str_step(state, ch, prefix):
-    q = prefix[:1] or ch               # opening quote: " or '
+    q = prefix[0] if prefix else ch
     if state == START and ch in ('"', "'"):
         return STR
     if state == STR:
         if ch == "\\":
             return STR_ESC
-        return STR_END if ch == q else STR
+        if ch == q:
+            return STR_END
+        return STR if (ch in STRING_BASE and ch != q) else ERR
     if state == STR_ESC and ch in (q, "\\", "n"):
         return STR
     return ERR
@@ -420,7 +488,7 @@ def _char_class(ch):
         return "SPACE"
     if ch in "\r\n":
         return "NEWLINE"
-    if ch in ('"', "'"):
+    if ch in "\"'":
         return "QUOTE"
     if ch == "\\":
         return "BACKSLASH"
@@ -449,7 +517,8 @@ def build_trace(src, segs, lc):
             elif kind == "comment" and nxt != ERR:
                 cls = "COMMENT"
             else:
-                cls = _char_class(ch)
+                cls = "SCHAR" if (kind == "string" and ch ==
+                                  "?") else _char_class(ch)
             ln, col = lc(idx)
             shown = _show(ch)
             out.append(f"SCAN | Line {ln}, Column {col} | Character: "
@@ -457,6 +526,12 @@ def build_trace(src, segs, lc):
             out.append(f"DFA | Line {ln}, Column {col} | "
                        f"q{state} --[{shown}]--> q{nxt}")
             state = nxt
+
+        if kind == "word" and tok_type == "IDENTIFIER" and state != ID:
+            ln, col = lc(end)
+            out.append(f"DFA | Line {ln}, Column {col} | "
+                       f"q{state} --[end of word]--> q{ID}")
+            state = ID
         lexeme = _show(src[start:end])
         if msg is None:
             out.append(f"ACCEPT | [{lexeme}] | State: q{state} | "
@@ -492,8 +567,8 @@ def render_symbol_table(tokens):
 def main():
     ap = argparse.ArgumentParser(description="Solb lexical analyzer")
     ap.add_argument("source", help="Solb source file (.solb)")
-    ap.add_argument("-o", "--output", default="symbol_table.txt",
-                    help="where to save the report (default: symbol_table.txt)")
+    ap.add_argument("-o", "--output", default="SYMBOL TABLE.txt",
+                    help="where to save the report (default: SYMBOL TABLE.txt)")
     args = ap.parse_args()
 
     if not args.source.lower().endswith(".solb"):
@@ -509,14 +584,15 @@ def main():
     tokens, errors, segs, lc = tokenize(src)
     table, unique = render_symbol_table(tokens)
 
-    # Output Terminal - symbol table + errors.
+    # Terminal: symbol table + errors.
     print("\n".join(table))
     if errors:
         print("\nLEXICAL ERRORS")
         for e in errors:
-            print(f"Line {e.line}, Column {e.col}: {e.message} -> [{e.lexeme}]")
+            print(
+                f"Line {e.line}, Column {e.col}: {e.message} -> [{e.lexeme}]")
 
-    # File - symbol table, then the DFA trace.
+    # File: symbol table, then the DFA trace.
     lines = table + [
         "",
         "CHARACTER-BY-CHARACTER SCAN AND DFA TRANSITIONS",
