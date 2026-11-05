@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Solb lexical analyzer.
 
@@ -7,7 +6,7 @@ Usage:
     python lexer.py program.solb -o my_symbol_table.txt
 
 Prints the symbol table (Lexeme | Token) and any lexical errors to the terminal.
-Saves the symbol table plus the character-by-character DFA transitions to
+Saves the symbol table and the character-by-character DFA transitions to
 symbol_table.txt. Exits with status 1 if any lexical errors were found.
 """
 
@@ -18,7 +17,7 @@ import sys
 from dataclasses import dataclass
 
 # --------------------------------------------------------------------------
-# Language definition (from the Solb PL design document)
+# Language definition
 # --------------------------------------------------------------------------
 
 KEYWORDS = {}
@@ -34,6 +33,7 @@ _add("DATA_TYPE",
      "int int8 int16 int32 int64 int128 int256 "
      "bool boolean address string str bytes asset enum struct "
      "mapping ledger roster")
+
 
 _add("KEYWORD",
      "contract constructor construct def define if else for while return "
@@ -97,7 +97,7 @@ ALPHA = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 DIGITS = set("0123456789")
 HEXDIGITS = DIGITS | set("abcdefABCDEF")
 UPPER = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-SCHAR = set("+-=*/%|~^_;:.,[]{}()!\"'<>&\\?")
+SCHAR = set("+-=*/%|~^_;:.,[]{}()!\"'<>&\\? ")
 STRING_BASE = ALPHA | DIGITS | SCHAR | {"?"}
 WHITESPACE = set(" \t\r\n\f\v")
 
@@ -317,17 +317,19 @@ def tokenize(src):
                 continue
 
             if is_decimal:
-                error(i, j, "decimal literal is only allowed with an asset "
-                            "symbol (e.g. 0.05 ETH)", "number")
-                i = j
-            elif j < n and is_word_char(src[j]):
-                j = word_end(i)
-                error(i, j, "malformed number", "number")
-                i = j
-            else:
-                emit("INTEGER", i, j, "number")
-                i = j
-            continue
+                if j < n and is_word_char(src[j]):
+                    # e.g. 1.5s, 2.5x: a decimal glued to letters
+                    j = word_end(i)
+                    error(i, j, "malformed number: a decimal cannot be followed "
+                                "by letters (durations must be whole numbers, "
+                                "e.g. 30s)", "number")
+                    i = j
+                else:
+                    error(i, j, "decimals are not allowed as plain numbers; "
+                                "uint/int values must be whole numbers. "
+                                "Decimals are only valid inside asset literals "
+                                "(e.g. 1.5 ETH)", "number")
+                    i = j
 
         # ---- string literal ('...' or "...") ----------------------------
         if c == '"' or c == "'":
@@ -543,7 +545,7 @@ def build_trace(src, segs, lc):
 
 
 # --------------------------------------------------------------------------
-# Reporting
+# Symbol table insertions and rendering
 # --------------------------------------------------------------------------
 
 def build_symbol_table(tokens):
@@ -555,7 +557,7 @@ def build_symbol_table(tokens):
 
 
 def render_symbol_table(tokens):
-    # Every occurrence is listed, in source order (repeats are NOT merged).
+    # Every occurrence is listed, in source order.
     rows = [(t.lexeme, t.type) for t in tokens]
     width = max([len("Lexeme")] + [len(lex) for lex, _ in rows])
     out = [f"{'Lexeme':<{width}} | Token",
