@@ -318,18 +318,24 @@ def tokenize(src):
 
             if is_decimal:
                 if j < n and is_word_char(src[j]):
-                    # e.g. 1.5s, 2.5x: a decimal glued to letters
                     j = word_end(i)
                     error(i, j, "malformed number: a decimal cannot be followed "
                                 "by letters (durations must be whole numbers, "
                                 "e.g. 30s)", "number")
-                    i = j
                 else:
                     error(i, j, "decimals are not allowed as plain numbers; "
                                 "uint/int values must be whole numbers. "
                                 "Decimals are only valid inside asset literals "
                                 "(e.g. 1.5 ETH)", "number")
-                    i = j
+                i = j
+            elif j < n and is_word_char(src[j]):
+                j = word_end(i)
+                error(i, j, "malformed number", "number")
+                i = j
+            else:
+                emit("INTEGER", i, j, "number")
+                i = j
+            continue
 
         # ---- string literal ('...' or "...") ----------------------------
         if c == '"' or c == "'":
