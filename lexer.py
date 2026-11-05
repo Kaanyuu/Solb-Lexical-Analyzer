@@ -34,17 +34,32 @@ _add("DATA_TYPE",
      "int int8 int16 int32 int64 int128 int256 "
      "bool boolean address string str bytes asset enum struct "
      "mapping ledger roster")
-# "copy" is not in the spec's keyword table but is used in its examples.
+
 _add("KEYWORD",
      "contract constructor construct def define if else for while return "
      "import new event error emit require void copy")
-_add("ACCESS_SPECIFIER", "external internal private public")
-_add("MUTABILITY", "pure view payable")
-_add("DATA_LOCATION", "storage memory calldata")
-_add("BUILTIN", "offer accept order swap batch refund timeout cancel")
-_add("CONTEXT_KEYWORD", "partial buy gascontext bytecodecontext")
-_add("GLOBAL", "msg block sender value")
-_add("BOOL_LITERAL", "true false")
+
+_add("ACCESS_SPECIFIER",
+     "external internal private public")
+
+_add("MUTABILITY", 
+     "pure view payable")
+
+_add("DATA_LOCATION", 
+     "storage memory calldata")
+
+_add("BUILTIN", 
+     "offer accept order swap batch refund timeout cancel")
+
+_add("CONTEXT_KEYWORD", 
+     "partial buy gascontext bytecodecontext")
+
+_add("GLOBAL", 
+     "msg block sender value")
+
+_add("BOOL_LITERAL", 
+     "true false")
+
 
 # Longest match first: 2-char operators, then 1-char operators.
 OPS2 = {
